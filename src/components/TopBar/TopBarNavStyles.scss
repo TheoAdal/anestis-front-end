@@ -1,0 +1,60 @@
+.nav-bar-container {
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+}
+
+.container {
+  width: 80%;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    margin: 0;
+  }
+
+  @media only screen and (min-width: 1360px) {
+    max-width: 1088px;
+  }
+}
+
+.nav-dropdown .dropdown-menu {
+  background-color: #1b8877; // Set the dropdown menu background color
+  .dropdown-item {
+    color: rgb(255, 255, 255);
+    &:hover {
+      color: rgb(255, 255, 255);
+      background-color: #00A98F;  // Adjust the color to your preference
+    }
+  }
+}
+
+
+
+
+.dropdown .dropdown-toggle {
+  color: white !important;
+}
+
+.navbar-brand {
+  display: flex;
+  font-family: Helvetica-Nue;
+  color: #ffffff !important;
+  // margin-bottom: 5px;
+
+  .nav-logo {
+    width: 50px; /* Adjust the logo size as needed */
+    margin-right: 5px; /* Add margin between logo and text */
+    margin-bottom: -5px;
+    margin-left: 10px;
+  }
+}
+
+.navbar-expand .navbar-nav {
+  display: flex;
+  display: contents;
+  font-family: Sans-Serif;
+  margin-left: -15px;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
