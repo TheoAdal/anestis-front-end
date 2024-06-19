@@ -1,60 +1,111 @@
+@media (max-width: 768px) { //Responsive for mobile use NOT READY
+  .nav-bar-container {
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .top-bar-nav {
+        flex-direction: column;
+        width: 100%;
+        
+
+        .nav-link, .nav-dropdown {
+          margin: 0.5rem 0;
+        }
+      }
+    }
+  }
+}
+
+// .font-class {
+//   font-family: 'Montserrat', sans-serif;
+//   font-weight: 700; /* Adjust font weight as needed */
+//   font-size: 18px; /* Adjust font size as needed */
+//   -webkit-text-stroke: 1px black; /* Black outline */
+//   color: transparent; /* Make the text transparent to show the stroke */
+// }
+
 .nav-bar-container {
-  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
-}
-
-.container {
-  width: 80%;
-
-  @media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #3333334b; // Dark background color of the navbar
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
     width: 100%;
-    margin: 0;
-  }
+    height: 15%;
+    z-index: 1000;
 
-  @media only screen and (min-width: 1360px) {
-    max-width: 1088px;
-  }
-}
+    .container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
 
-.nav-dropdown .dropdown-menu {
-  background-color: #1b8877; // Set the dropdown menu background color
-  .dropdown-item {
-    color: rgb(255, 255, 255);
-    &:hover {
-      color: rgb(255, 255, 255);
-      background-color: #00A98F;  // Adjust the color to your preference
+      .nav {
+        .nav-logo {
+          width: 80px; // Adjust logo size as needed
+          margin-right: 50px; // Margin between logo and text
+          margin-bottom: 0;
+          margin-left: 0;
+        }
+      }
+
+      .top-bar-nav {
+        display: flex;
+        align-items: center;
+
+        .nav-link {
+          color: #262121;
+          text-decoration: none;
+          margin: 0 1rem;
+          font-weight: bold;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .nav-dropdown {
+          .dropdown-menu {
+            background-color: #444444; // Background color of dropdown menu
+            border: none;
+            border-radius: 0;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); // Optional: Add shadow for depth
+
+            .dropdown-item {
+              color: #ffffff;
+              padding: 0.75rem 1.25rem;
+              font-weight: normal;
+              transition: background-color 0.3s ease;
+
+              &:hover {
+                background-color: #555555; // Hover background color
+                text-decoration: none;
+              }
+
+              a {
+                color: #ffffff;
+                text-decoration: none;
+                &:hover {
+                  color: #ffffff;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
 
 
-
-
-.dropdown .dropdown-toggle {
-  color: white !important;
+/* Add padding to the body to offset content under fixed navbar */
+body {
+  padding-top: 80px; // Adjust according to navbar height
 }
 
-.navbar-brand {
-  display: flex;
-  font-family: Helvetica-Nue;
-  color: #ffffff !important;
-  // margin-bottom: 5px;
-
-  .nav-logo {
-    width: 50px; /* Adjust the logo size as needed */
-    margin-right: 5px; /* Add margin between logo and text */
-    margin-bottom: -5px;
-    margin-left: 10px;
-  }
-}
-
-.navbar-expand .navbar-nav {
-  display: flex;
-  display: contents;
-  font-family: Sans-Serif;
-  margin-left: -15px;
-
-  a {
-    color: white;
-    text-decoration: none;
-  }
-}
+  // .navbar-brand {
+  //   display: flex;
+  //   font-family: Helvetica-Nue;
+  //   color: #ffffff ;
+  //   // margin-bottom: 5px;
+  // }

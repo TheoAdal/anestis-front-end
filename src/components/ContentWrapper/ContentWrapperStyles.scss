@@ -1,0 +1,17 @@
+.content-wrapper-container {
+  background-size: cover;
+  background-position: center;
+}
+
+.content-wrapper-routes {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+  }
+}

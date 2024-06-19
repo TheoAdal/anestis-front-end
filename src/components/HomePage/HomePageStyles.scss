@@ -1,0 +1,21 @@
+.carousel-container {
+  display: flex;
+  justify-content: center;
+
+  h3 {
+    color: #fff;
+  }
+  .carousel-image {
+    width: 100%; 
+    max-width: 100%; 
+    height: auto; 
+
+    @media only screen and (max-width: 768px) {
+      width: 100%;
+    }
+
+    @media only screen and (min-width: 1360px) {
+      max-width: 1088px;
+    }
+  }
+}
