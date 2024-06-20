@@ -6,10 +6,12 @@ function Home() {
   return (
     <div className="carousel-wrapper">
       {/* <div className="carousel-container"> */}
-        <CarouselAnimation />
+      <CarouselAnimation />
       {/* </div> */}
-      <h1>Welcome to the Architect's Website</h1>
-      <p>Discover the services and projects of our talented architect.</p>
+      <div className="welcome">
+        <h1>Welcome to the Architect's Website</h1>
+        <p>Discover the services and projects of our talented architect.</p>
+      </div>
     </div>
   );
 }

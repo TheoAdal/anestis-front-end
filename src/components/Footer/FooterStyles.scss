@@ -1,30 +1,60 @@
 .footer-container {
-  //margin-top: 10px;
   bottom: 0; 
-  background-color: #28c0a9;
+  // background-color: #333333de;
+  background-color: #24118dde;
   width: 100%;
-  padding: 20px; /* Adjust padding as needed */
+  padding: 20px; 
   color: #fff;
+  // border-top: 5px solid #28c0a9; 
 }
 
 .footer-content { 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  background-color: #ff0000;
 }
 
 .company-info {
+  margin: 5px;
   display: flex;
   align-items: center;
 }
 
+.name-address {
+  h4 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
 .company-logo {
-  width: 50px; /* Adjust the logo size as needed */
-  margin-right: 10px; /* Add margin between logo and text */
-  margin-bottom: 12px;
+  width: 80px; /* Adjust the logo size as needed */
+  margin: 10px; 
+  
 }
 
 .contact-info {
+  margin: 15px;
   text-align: right;
+  p {
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .contact-info {
+    text-align: left;
+    margin-top: 10px;
+  }
 }
 
