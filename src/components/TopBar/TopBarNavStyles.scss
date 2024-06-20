@@ -1,5 +1,6 @@
 @media (max-width: 768px) { //Responsive for mobile use NOT READY
   .nav-bar-container {
+    
     .container {
       flex-direction: column;
       align-items: flex-start;
@@ -26,15 +27,20 @@
 // }
 
 .nav-bar-container {
+  // position: fixed;
+  // top: 0;
+  // width: 100%;
+  // z-index: 1000; // Ensure it stays above other elements
+  
   .navbar {
-    background-color: #3333334b; // Dark background color of the navbar
-    backdrop-filter: blur(10px);
+    background-color: #3333332d; // Dark background color of the navbar
+    backdrop-filter: blur(5px); //change blur here
     padding: 1rem 0;
     position: fixed;
     top: 0;
     width: 100%;
     height: 15%;
-    z-index: 1000;
+    z-index: 2;
 
     .container {
       display: flex;
@@ -68,7 +74,8 @@
           .dropdown-menu {
             background-color: #444444; // Background color of dropdown menu
             border: none;
-            border-radius: 0;
+
+            border-radius: 0; 
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); // Optional: Add shadow for depth
 
             .dropdown-item {

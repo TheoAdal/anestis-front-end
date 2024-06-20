@@ -1,11 +1,16 @@
 .App {
     text-align: center;
+    background-color: #e01010;
   }
   
   .top-bar-container {
     display: flex;
     flex-direction: column;
     // background-color: #61dafb; //for tests
+  }
+
+  .content-wrapper {
+    padding-top: 0px; // Adjust the top padding to match the height of your fixed navbar
   }
   
   /* .navbar-brand {
@@ -21,9 +26,6 @@
     margin-left: -15px;
   } */
 
-
-
-
   //DELETEEEEEEEEEEEEEEE
   .App-logo {
     height: 40vmin;
@@ -37,7 +39,7 @@
   }
   
   .App-header {
-    background-color: #8e9cc5;
+    // background-color: #8e9cc5;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -48,7 +50,7 @@
   }
   
   .App-link {
-    color: #61dafb;
+    color: #000000;
   }
   
   @keyframes App-logo-spin {
