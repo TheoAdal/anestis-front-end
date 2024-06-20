@@ -1,4 +1,5 @@
 import "./App.scss";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter } from "react-router-dom";
 import TopBarNav from "./components/TopBar/TopBarNav";
 import FooterWrapper from "./components/Footer/FooterWrapper";
@@ -10,13 +11,13 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <div className="top-bar-container">
-          <TopBarNav />
+          <TopBarNav/>
         </div>
         <div className="content-wrapper">
-          <ContentWrapper /> 
+          <ContentWrapper/> 
         </div>
         <div className="footer-container">
-          <FooterWrapper />
+          <FooterWrapper/>
         </div>
       </div>
     </BrowserRouter>
