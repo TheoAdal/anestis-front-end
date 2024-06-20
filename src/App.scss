@@ -1,19 +1,19 @@
 .App {
-    text-align: center;
-    background-color: #e01010;
-  }
-  
-  .top-bar-container {
-    display: flex;
-    flex-direction: column;
-    // background-color: #61dafb; //for tests
-  }
+  margin-top: -80px;
+  text-align: center;
+  min-height: 100vh; // Ensure the App component takes the full viewport height
+  background: url("images/background.png") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
 
-  .content-wrapper {
-    padding-top: 0px; // Adjust the top padding to match the height of your fixed navbar
-  }
-  
-  /* .navbar-brand {
+.top-bar-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .navbar-brand {
     display: flex;
     align-items: flex-end;
     font-family: Helvetica-Nue;
@@ -26,38 +26,43 @@
     margin-left: -15px;
   } */
 
-  //DELETEEEEEEEEEEEEEEE
+//DELETEEEEEEEEEEEEEEE
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    height: 40vmin;
-    pointer-events: none;
+    animation: App-logo-spin infinite 20s linear;
   }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #000000;
+}
+
+.content-wrapper-container {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  .App-header {
-    // background-color: #8e9cc5;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+  to {
+    transform: rotate(360deg);
   }
-  
-  .App-link {
-    color: #000000;
-  }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
+}

@@ -60,8 +60,8 @@
         display: flex;
         align-items: center;
 
-        .nav-link {
-          color: #262121;
+        .link {
+          color: #e7dbdb;
           text-decoration: none;
           margin: 0 1rem;
           font-weight: bold;
@@ -71,6 +71,7 @@
         }
 
         .nav-dropdown {
+          // color: #E7DBDB ;
           .dropdown-menu {
             background-color: #444444; // Background color of dropdown menu
             border: none;

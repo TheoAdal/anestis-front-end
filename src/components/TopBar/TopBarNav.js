@@ -15,28 +15,33 @@ function TopBarNav() {
 
   return (
     <div className="nav-bar-container">
-      <Navbar  data-bs-theme="dark">
+      <Navbar data-bs-theme="dark">
         <Container className="container">
           <Navbar.Brand className="nav logo">
-            <Nav.Link to="/">
-               <img src={logo} alt="LOGO" className="nav-logo font-class" />
-             </Nav.Link>
+            <Link to="/">
+              <img src={logo} alt="LOGO" className="nav-logo font-class" />
+            </Link>
           </Navbar.Brand>
           <Nav className="top-bar-nav">
-             <Nav.Link to="/" >Home</Nav.Link> {/* className="nav-link font-class" for other font styles*/} 
-            <NavDropdown title="Projects" id="basic-nav-dropdown" className="nav-dropdown">
+            <Link className="link" to="/">Home</Link>
+            {/* className="nav-link font-class" for other font styles*/}
+            <NavDropdown
+              title="Projects"
+              // id="basic-nav-dropdown"
+              className="nav-dropdown"
+            >
               <NavDropdown.Item as="div" className="dropdown-item">
-                <Nav.Link to="/hotels">Hotels</Nav.Link>
+                <Link  to="/projects/hotels">Hotels</Link>
               </NavDropdown.Item>
               <NavDropdown.Item as="div" className="dropdown-item">
-                <Nav.Link to="/houses">Houses</Nav.Link>
+                <Link  to="/projects/houses">Houses</Link>
               </NavDropdown.Item>
               <NavDropdown.Item as="div" className="dropdown-item">
-                <Nav.Link to="/stores">Stores</Nav.Link>
+                <Link  to="/projects/stores">Stores</Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link to="/info">Info</Nav.Link>
-            <Nav.Link to="/contact">Contact</Nav.Link>
+            <Link className="link" to="/info">Info</Link>
+            <Link className="link" to="/contact">Contact</Link>
           </Nav>
         </Container>
       </Navbar>
