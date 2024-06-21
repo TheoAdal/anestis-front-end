@@ -21,3 +21,32 @@
   object-fit: cover; // Ensures the image covers the entire container
   background-size: auto;
 }
+
+.projects-section {
+  color: #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.project-image-container {
+  width: calc(25% - 20px); // Adjust the width as needed
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
