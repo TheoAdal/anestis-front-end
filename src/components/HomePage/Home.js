@@ -1,6 +1,9 @@
 import React from "react";
-import CarouselAnimation from "./CarouselAnimation";
 import "./HomePageStyles.scss";
+
+import CarouselAnimation from "./CarouselAnimation";
+// import Details from "./Details.js";
+import ProjectSection from "./ProjectSection.js";
 
 function Home() {
   return (
@@ -11,7 +14,10 @@ function Home() {
       <div className="welcome">
         <h1>Welcome to the Architect's Website</h1>
         <p>Discover the services and projects of our talented architect.</p>
-      </div>
+        </div>
+        <ProjectSection/>
+        {/* <Details/> */}
+      
     </div>
   );
 }

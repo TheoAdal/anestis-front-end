@@ -1,5 +1,5 @@
 import "./TopBarNavStyles.scss";
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../images/sitelogo2.png";
 
@@ -9,9 +9,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 function TopBarNav() {
-  const navbarStyle = {
-    // backgroundColor: "#00A98F",
-  };
+  
 
   return (
     <div className="nav-bar-container">
@@ -29,6 +27,7 @@ function TopBarNav() {
               title="Projects"
               // id="basic-nav-dropdown"
               className="nav-dropdown"
+              style={{ color: "#e7dbdb" }}
             >
               <NavDropdown.Item as="div" className="dropdown-item">
                 <Link  to="/projects/hotels">Hotels</Link>
