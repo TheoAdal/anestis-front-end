@@ -19,7 +19,7 @@ const ProjectsSection = () => {
         src: pr3,
         description: "Project 3",
       },
-      // Add more image objects as needed
+      
     ];
 
   return (
@@ -29,10 +29,10 @@ const ProjectsSection = () => {
       ) : (
         images.map((image, index) => (
           <div key={index} className="project-image-container">
-            <a href={`/project/${index}`}>
+            <a href={`/project/`}>
               <img
                 src={image.src}
-                alt={image.description || `Project Image ${index + 1}`}
+                alt={image.description || `Project Image `}
                 className="project-image"
               />
             </a>

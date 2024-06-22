@@ -1,0 +1,100 @@
+// ContactPageStyles.scss
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // height: auto;
+
+  margin-bottom: 1px;
+  // background-color: #00a98f;
+}
+
+.col-lg-8 {
+  margin-top: 150px;
+  margin-bottom: 100px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.section-box {
+  margin-bottom: 20px;
+
+  h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+.form-group {
+  margin-bottom: 15px;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+  }
+
+  textarea.form-control {
+    resize: vertical;
+  }
+
+  .button {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.state-message {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #e7f3fe;
+  border: 1px solid #b3d8fd;
+  color: #31708f;
+  border-radius: 5px;
+  font-size: 1rem;
+}
