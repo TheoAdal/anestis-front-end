@@ -66,7 +66,7 @@ return (
             θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.
             </p>
           </div>
-          <Form onSubmit={sendEmail}>
+          <Form classname = "form-box" onSubmit={sendEmail}>
             <Form.Group className="form-group" >
               <Form.Label >Name</Form.Label>
               <Form.Control
