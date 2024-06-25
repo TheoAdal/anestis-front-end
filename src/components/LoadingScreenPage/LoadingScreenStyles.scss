@@ -10,11 +10,11 @@
     justify-content: center;
     background-color: #0000009c; 
     backdrop-filter: blur(10px);
-    z-index: 1000; //in order to above other componenets
+    z-index: 1000; //in order to be above other componenets
   }
   
   .loading-logo {
-    width: 150px; //size
+    width: 150px; //size of logo
     filter: saturate(0%);
     transition: filter 1s ease; //duration of how long 
                                 //the saturation will 

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './LoadingScreenStyles.scss';
-import logo from '../../images/sitelogo2.png'; // Adjust the path to your logo
+import logo from '../../images/sitelogo2.png'; 
 
 const LoadingScreen = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time
+    //Timer for the LoadingScreen
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2000); //when 2 seconds pass the saturation reverts to normal

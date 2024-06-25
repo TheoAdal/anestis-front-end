@@ -5,6 +5,8 @@ import "./ContentWrapperStyles.scss";
 import Home from "../HomePage/Home";
 import InfoPage from "../InfoPage/Info";
 import Contact from "../ContactPage/Contact";
+import ProjectsGrid from "../Projects/ProjectGrid";
+// import SpecificProject from "../Projects/SpecificProject";
 import LoadingScreen from "../LoadingScreenPage/LoadingScreen";
 
 function ContentWrapperComponent() {
@@ -15,10 +17,8 @@ function ContentWrapperComponent() {
           <Route exact path="/" element={<Home />} />
           <Route exact path="/info" element={<InfoPage />} />
           <Route path="/contact" element={<Contact />} />
-          {/*<Route path="/projects" element={<Projects />} />
-          <Route path="/projects/hotels" element={<Hotels />} />
-          <Route path="/projects/houses" element={<Houses />} />
-          <Route path="/projects/stores" element={<Stores />} /> */}
+          <Route path="/projects/:category" element={<ProjectsGrid />} />
+          {/* <Route path="/projects/:category/:project-name" element={<SpecificProject />} />   */}
         </Routes>
       </div>
     </div>

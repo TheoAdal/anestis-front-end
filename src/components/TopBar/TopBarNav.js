@@ -9,8 +9,6 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 function TopBarNav() {
-  
-
   return (
     <div className="nav-bar-container">
       <Navbar data-bs-theme="dark">
@@ -21,7 +19,9 @@ function TopBarNav() {
             </Link>
           </Navbar.Brand>
           <Nav className="top-bar-nav">
-            <Link className="link" to="/">Home</Link>
+            <Link className="link" to="/">
+              Home
+            </Link>
             {/* className="nav-link font-class" for other font styles*/}
             <NavDropdown
               title="Projects"
@@ -30,17 +30,21 @@ function TopBarNav() {
               style={{ color: "#e7dbdb" }}
             >
               <NavDropdown.Item as="div" className="dropdown-item">
-                <Link  to="/projects/hotels">Hotels</Link>
+                <Link to="/projects/hotels">Hotels</Link>
               </NavDropdown.Item>
               <NavDropdown.Item as="div" className="dropdown-item">
-                <Link  to="/projects/houses">Houses</Link>
+                <Link to="/projects/houses">Houses</Link>
               </NavDropdown.Item>
               <NavDropdown.Item as="div" className="dropdown-item">
-                <Link  to="/projects/stores">Stores</Link>
+                <Link to="/projects/stores">Stores</Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <Link className="link" to="/info">Info</Link>
-            <Link className="link" to="/contact">Contact</Link>
+            <Link className="link" to="/info">
+              Info
+            </Link>
+            <Link className="link" to="/contact">
+              Contact
+            </Link>
           </Nav>
         </Container>
       </Navbar>
