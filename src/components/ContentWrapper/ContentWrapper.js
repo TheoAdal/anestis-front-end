@@ -7,7 +7,9 @@ import InfoPage from "../InfoPage/Info";
 import Contact from "../ContactPage/Contact";
 import ProjectsGrid from "../Projects/ProjectGrid";
 // import SpecificProject from "../Projects/SpecificProject";
+
 import LoadingScreen from "../LoadingScreenPage/LoadingScreen";
+import NotFound from "../ErrorPage/NotFound"; 
 
 function ContentWrapperComponent() {
   return (
@@ -18,7 +20,8 @@ function ContentWrapperComponent() {
           <Route exact path="/info" element={<InfoPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects/:category" element={<ProjectsGrid />} />
-          {/* <Route path="/projects/:category/:project-name" element={<SpecificProject />} />   */}
+          {/* <Route path="/projects/:category/:project-name" element={<SpecificProject />} />*/}
+          <Route path="*" element={<NotFound />} /> {/*for undefined routes*/}
         </Routes>
       </div>
     </div>
