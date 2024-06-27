@@ -14,7 +14,7 @@ const SpecificProject = () => {
   useEffect(() => {
     const fetchProjectDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/projects/get/0/${projectName}`);
+        const response = await axios.get(`http://localhost:5000/getprojects/get/0/${projectName}`);
         setProject(response.data);
         setCategory(response.data.category);
       } catch (error) {
