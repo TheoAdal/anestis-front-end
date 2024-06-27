@@ -10,6 +10,7 @@ import SpecificProject from "../Projects/SpecificProject";
 
 import LoadingScreen from "../LoadingScreenPage/LoadingScreen";
 import NotFound from "../ErrorPage/NotFound"; 
+import UploadProject from "../UploadProjectPage/UploadCompleteProject";
 
 function ContentWrapperComponent() {
   return (
@@ -22,6 +23,7 @@ function ContentWrapperComponent() {
           <Route path="/projects/:category" element={<ProjectsGrid />} />
           <Route path="/projects/:category/:project-name" element={<SpecificProject />} />
           <Route path="*" element={<NotFound />} /> {/*for undefined routes*/}
+          <Route path="/projects/upload" element={<UploadProject  />} />
         </Routes>
       </div>
     </div>
