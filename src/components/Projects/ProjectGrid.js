@@ -21,7 +21,7 @@ const ProjectsGrid = () => {
     const fetchProjects = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/projects/get/:id/${category}`
+          `http://localhost:5000/projects/getall/:id/${category}`
           // `http://localhost:5000/projects/getall`
         );
         setProjects(response.data);
