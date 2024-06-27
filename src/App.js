@@ -14,7 +14,7 @@ const App = () => { //KATHE FORA POU KANEI RELOAD BGAINEI TO LOADING
     // loading time?
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 5000); //duration of the loading screen
+    }, 1000); //duration of the loading screen
               //After 5 seconds, page is shown
 
     return () => clearTimeout(timer);

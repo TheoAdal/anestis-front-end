@@ -7,6 +7,7 @@ const validCategories = ["hotels", "houses", "stores", "offices", "apartments"];
 
 const ProjectsGrid = () => {
   const { category } = useParams();
+  const {id}= useParams();
   const navigate = useNavigate();
   const [projects, setProjects] = useState([]);
 
@@ -20,7 +21,8 @@ const ProjectsGrid = () => {
     const fetchProjects = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/projects/get/${category}`
+          `http://localhost:5000/projects/get/:id/${category}`
+          // `http://localhost:5000/projects/getall`
         );
         setProjects(response.data);
       } catch (error) {
