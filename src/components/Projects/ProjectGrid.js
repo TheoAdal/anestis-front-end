@@ -7,7 +7,6 @@ const validCategories = ["hotels", "houses", "stores", "offices", "apartments"];
 
 const ProjectsGrid = () => {
   const { category } = useParams();
-  const {id}= useParams();
   const navigate = useNavigate();
   const [projects, setProjects] = useState([]);
 
@@ -33,7 +32,7 @@ const ProjectsGrid = () => {
     if (category) {
       fetchProjects();
     }
-  }, [category]);
+  }, [category, navigate]);
 
   return (
     <div className="projects-grid-container">
@@ -49,11 +48,11 @@ const ProjectsGrid = () => {
           projects.map((project, index) => (
             <div key={index} className="project-card">
               <img
-                src={project.images[0]}
-                alt={project.name}
+                src={`http://localhost:5000/uploads/${project.images[0]}`}
+                alt={project.title}
                 className="project-thumbnail"
               />
-              <div className="project-title">{project.name}</div>
+              <div className="project-title">{project.title}</div>
             </div>
           ))
         )}
