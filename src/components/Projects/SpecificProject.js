@@ -6,7 +6,7 @@ import ProjectsGrid from './ProjectGrid'; // Assuming ProjectsGrid is in the sam
 import './SpecificProjectStyles.scss';
 
 const SpecificProject = () => {
-  const { id, projectName } = useParams();
+  const { id, name } = useParams();
   const [project, setProject] = useState(null);
   const [category, setCategory] = useState(null);
   const navigate = useNavigate();
@@ -14,8 +14,8 @@ const SpecificProject = () => {
   useEffect(() => {
     const fetchProjectDetails = async () => {
       try {
-        // const response = await axios.get(`http://localhost:5000/getprojects/get/0/${projectName}`);
-        const response = await axios.get(`http://localhost:5000/getprojects/get/${id}`);
+        const response = await axios.get(`http://localhost:5000/getprojects/get/0/${name}`);
+        // const response = await axios.get(`http://localhost:5000/getprojects/get/${id}`);
         setProject(response.data);
         setCategory(response.data.category);
       } catch (error) {
@@ -25,7 +25,7 @@ const SpecificProject = () => {
     };
 
     fetchProjectDetails();
-  }, [projectName, navigate]);
+  }, [name, navigate]);
 
   if (!project) {
     return <p>Loading...</p>;
