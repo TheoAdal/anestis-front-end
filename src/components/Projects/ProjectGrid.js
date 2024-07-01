@@ -49,7 +49,7 @@ const ProjectsGrid = () => {
             
             <div key={index} className="project-card">
               {/* <Link key={index} to={`/projects/${project.category}/${project._id}`} > */}
-              <Link to={`/projects/${project.category}/${project._id}/${project.name}`}>
+              <Link to={`/projects/${project.category}/${project.name}`}>
               <img
                 src={`http://localhost:5000/uploads/${project.images[0]}`}
                 alt={project.title}
