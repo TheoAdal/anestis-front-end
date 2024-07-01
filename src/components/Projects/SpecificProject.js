@@ -6,7 +6,7 @@ import ProjectsGrid from './ProjectGrid'; // Assuming ProjectsGrid is in the sam
 import './SpecificProjectStyles.scss';
 
 const SpecificProject = () => {
-  const { projectName } = useParams();
+  const { id, projectName } = useParams();
   const [project, setProject] = useState(null);
   const [category, setCategory] = useState(null);
   const navigate = useNavigate();
@@ -14,7 +14,8 @@ const SpecificProject = () => {
   useEffect(() => {
     const fetchProjectDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/getprojects/get/0/${projectName}`);
+        // const response = await axios.get(`http://localhost:5000/getprojects/get/0/${projectName}`);
+        const response = await axios.get(`http://localhost:5000/getprojects/get/${id}`);
         setProject(response.data);
         setCategory(response.data.category);
       } catch (error) {
@@ -36,10 +37,10 @@ const SpecificProject = () => {
         <Carousel>
           {project.images.map((image, index) => (
             <Carousel.Item key={index}>
-              <img src={image} alt={`Project Image ${index + 1}`} />
+              <img src={`http://localhost:5000/uploads/${image}`} alt={`Project Image ${index + 1}`} />
             </Carousel.Item>
           ))}
-        </Carousel>
+        </Carousel> 
       </div>
       <div className="details-section">
         <h1>{project.name}</h1>

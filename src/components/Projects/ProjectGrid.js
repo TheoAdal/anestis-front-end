@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate  } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "./ProjectStyles.scss";
 
@@ -46,14 +46,19 @@ const ProjectsGrid = () => {
           <p>Loading projects...</p>
         ) : (
           projects.map((project, index) => (
+            
             <div key={index} className="project-card">
+              {/* <Link key={index} to={`/projects/${project.category}/${project._id}`} > */}
+              <Link to={`/projects/${project.category}/${project._id}/${project.name}`}>
               <img
                 src={`http://localhost:5000/uploads/${project.images[0]}`}
                 alt={project.title}
                 className="project-thumbnail"
               />
               <div className="project-title">{project.title}</div>
+              </Link>
             </div>
+            
           ))
         )}
       </div>

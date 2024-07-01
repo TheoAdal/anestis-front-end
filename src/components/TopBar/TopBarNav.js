@@ -45,6 +45,10 @@ function TopBarNav() {
             <Link className="link" to="/contact">
               Contact
             </Link>
+            {/* DEV */}
+            <Link className="link" to="/18927358297659876345987263"> 
+              Upload Project
+            </Link>
           </Nav>
         </Container>
       </Navbar>

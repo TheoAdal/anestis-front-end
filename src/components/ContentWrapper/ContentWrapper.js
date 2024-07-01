@@ -21,9 +21,9 @@ function ContentWrapperComponent() {
           <Route exact path="/info" element={<InfoPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects/:category" element={<ProjectsGrid />} />
-          <Route path="/projects/:category/:project-name" element={<SpecificProject />} />
+          <Route path="/projects/:category/:id/:name" element={<SpecificProject />} />
           <Route path="*" element={<NotFound />} /> {/*for undefined routes*/}
-          <Route path="/projects/upload" element={<UploadProject  />} />
+          <Route path="/18927358297659876345987263" element={<UploadProject  />} />
         </Routes>
       </div>
     </div>
