@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'; 
 import axios from "axios";
 import "./UploadProjectStyles.scss";
 
 const UploadCompleteProject = () => {
+  const navigate = useNavigate();
   const [projectData, setProjectData] = useState({
     name: "",
     title: "",
@@ -45,7 +47,8 @@ const UploadCompleteProject = () => {
           },
         }
       );
-      console.log("Project and images uploaded successfully", response.data);
+      alert("Project and images uploaded successfully");
+      navigate("/projects/upload");
     } catch (error) {
       console.error("Error uploading project and images", error);
     }
