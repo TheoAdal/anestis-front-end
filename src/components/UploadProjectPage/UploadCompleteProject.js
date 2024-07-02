@@ -48,7 +48,7 @@ const UploadCompleteProject = () => {
         }
       );
       alert("Project and images uploaded successfully");
-      navigate("/projects/upload");
+      navigate("/18927358297659876345987263");
     } catch (error) {
       console.error("Error uploading project and images", error);
     }
