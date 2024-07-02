@@ -29,13 +29,16 @@ const ProjectsGrid = () => {
       }
     };
 
-    if (category) {
+    if (category) { 
       fetchProjects();
     }
   }, [category, navigate]);
-
+  //https://drive.google.com/file/d/19zY37N2CxritQvJkAtp7BGbtmtcEUotC/view?usp=sharing    
+  //https://drive.google.com/file/d/1_Jg8tm6EgttAJ_vvnXvN0k4N7c4f7Uma/view?usp=drive_link AYTO EINAI DEKTO 
+  //https://drive.google.com/file/d/15icQhLz8lQjwPGsJwVniHAG46t5HGn_u/view?usp=drive_link
   return (
     <div className="projects-grid-container">
+      {/* <img src="https://drive.google.com/thumbnail?id=1_Jg8tm6EgttAJ_vvnXvN0k4N7c4f7Uma" alt="Project Thumbnail" /> */}
       <h1>
         {category
           ? category.charAt(0).toUpperCase() + category.slice(1)
