@@ -15,7 +15,7 @@ const SpecificProject = () => {
     const fetchProjectDetails = async () => {
       try {
         const response = await axios.get(
-          `localhost:5000/getprojects/get/:id/${name}`
+          `http://localhost:5000/getprojects/getspecific/${name}`
         );
         // const response = await axios.get(`http://localhost:5000/getprojects/get/${id}`);
         setProject(response.data);
