@@ -29,13 +29,13 @@ function TopBarNav() {
               className="nav-dropdown"
               style={{ color: "#e7dbdb" }}
             >
-              <NavDropdown.Item as="div" className="dropdown-item">
+              <NavDropdown.Item className="dropdown-item">
                 <Link to="/projects/hotels">Hotels</Link>
               </NavDropdown.Item>
-              <NavDropdown.Item as="div" className="dropdown-item">
+              <NavDropdown.Item className="dropdown-item">
                 <Link to="/projects/houses">Houses</Link>
               </NavDropdown.Item>
-              <NavDropdown.Item as="div" className="dropdown-item">
+              <NavDropdown.Item className="dropdown-item">
                 <Link to="/projects/stores">Stores</Link>
               </NavDropdown.Item>
             </NavDropdown>
@@ -46,7 +46,7 @@ function TopBarNav() {
               Contact
             </Link>
             {/* DEV */}
-            <Link className="link" to="/18927358297659876345987263"> 
+            <Link className="link" to="/18927358297659876345987263">
               Upload Project
             </Link>
           </Nav>

@@ -56,7 +56,6 @@ const UploadCompleteProject = () => {
 
   return (
     <form onSubmit={handleSubmit} className="upload-project-form">
-      {/* <div className="project-background"> */}
       <input
         type="text"
         name="name"
