@@ -13,14 +13,14 @@ const ProjectsGrid = () => {
   useEffect(() => {
     if (!validCategories.includes(category)) {
       // Redirect to 404 page if the category is invalid
-      navigate('/404');
+      navigate("/404");
       return;
     }
-    
+
     const fetchProjects = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/getprojects/getall/:id/${category}`
+          `http://localhost:5000/getprojects/getall/0/${category}`
           // `http://localhost:5000/projects/getall`
         );
         setProjects(response.data);
@@ -29,13 +29,10 @@ const ProjectsGrid = () => {
       }
     };
 
-    if (category) { 
+    if (category) {
       fetchProjects();
     }
   }, [category, navigate]);
-  //https://drive.google.com/file/d/19zY37N2CxritQvJkAtp7BGbtmtcEUotC/view?usp=sharing    
-  //https://drive.google.com/file/d/1_Jg8tm6EgttAJ_vvnXvN0k4N7c4f7Uma/view?usp=drive_link AYTO EINAI DEKTO 
-  //https://drive.google.com/file/d/15icQhLz8lQjwPGsJwVniHAG46t5HGn_u/view?usp=drive_link
   return (
     <div className="projects-grid-container">
       {/* <img src="https://drive.google.com/thumbnail?id=1_Jg8tm6EgttAJ_vvnXvN0k4N7c4f7Uma" alt="Project Thumbnail" /> */}
@@ -49,19 +46,17 @@ const ProjectsGrid = () => {
           <p>Loading projects...</p>
         ) : (
           projects.map((project, index) => (
-            
             <div key={index} className="project-card">
               {/* <Link key={index} to={`/projects/${project.category}/${project._id}`} > */}
               <Link to={`/projects/${project.category}/${project.name}`}>
-              <img
-                src={`http://localhost:5000/uploads/${project.images[0]}`}
-                alt={project.title}
-                className="project-thumbnail"
-              />
-              <div className="project-title">{project.title}</div>
+                <img
+                  src={project.images[0]}
+                  alt={project.title}
+                  className="project-thumbnail"
+                />
+                <div className="project-title">{project.title}</div>
               </Link>
             </div>
-            
           ))
         )}
       </div>
