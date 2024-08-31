@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 import "./ProjectStyles.scss";
 
 const validCategories = ["hotels", "houses", "stores", "offices", "apartments"]; // Add your valid categories here
@@ -8,6 +9,7 @@ const validCategories = ["hotels", "houses", "stores", "offices", "apartments"];
 const ProjectsGrid = () => {
   const { category } = useParams();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -21,7 +23,6 @@ const ProjectsGrid = () => {
       try {
         const response = await axios.get(
           `http://localhost:5000/getprojects/getallspecific/${category}`
-          // `http://localhost:5000/projects/getall`
         );
         setProjects(response.data);
       } catch (error) {
@@ -33,21 +34,20 @@ const ProjectsGrid = () => {
       fetchProjects();
     }
   }, [category, navigate]);
+
   return (
     <div className="projects-grid-container">
-      {/* <img src="https://drive.google.com/thumbnail?id=1_Jg8tm6EgttAJ_vvnXvN0k4N7c4f7Uma" alt="Project Thumbnail" /> */}
       <h1>
         {category
-          ? category.charAt(0).toUpperCase() + category.slice(1)
-          : "All Projects"}
+          ? t('projects.category_title', { category: category.charAt(0).toUpperCase() + category.slice(1) })
+          : t('projects.all_projects')}
       </h1>
       <div className="projects-grid">
         {projects.length === 0 ? (
-          <p>Loading projects...</p>
+          <p>{t('projects.loading_projects')}</p>
         ) : (
           projects.map((project, index) => (
             <div key={index} className="project-card">
-              {/* <Link key={index} to={`/projects/${project.category}/${project._id}`} > */}
               <Link to={`/projects/${project.category}/${project.name}`}>
                 <img
                   src={project.images[0]}

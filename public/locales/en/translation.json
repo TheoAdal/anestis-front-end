@@ -1,0 +1,46 @@
+{
+  "welcome": "Welcome to the Architect's Website",
+  "discover_services": "Discover the services and projects of our talented architect.",
+  "carousel": {
+    "title1": "Title 1",
+    "description1": "Description 1",
+    "title2": "Title 2",
+    "description2": "Description 2",
+    "title3": "Title 3",
+    "description3": "Description 3"
+  },
+  "mission_title": "Our Mission",
+  "mission_description": "At Anestis Adalakis, our mission is to deliver innovative architectural designs that blend aesthetics, functionality, and sustainability. We are dedicated to creating spaces that inspire and meet the unique needs of our clients.",
+  "team_title": "Our Team",
+  "team_member_1_name": "Team Member 1",
+  "team_member_1_role": "Architect",
+  "team_member_2_name": "Team Member 2",
+  "team_member_2_role": "Designer",
+  "history_title": "Our History",
+  "history_description": "Founded in 2000, Anestis Adalakis has grown from a small firm to a leading architectural practice known for its innovative designs and client-focused approach. Over the years, we have completed numerous projects across various sectors, including residential, commercial, and public spaces.",
+  "contact": {
+    "title": "Contact Us",
+    "intro": "We would love to hear from you! Please fill out the form below and we will get in touch with you as soon as possible.",
+    "name": "Name",
+    "email": "Email address",
+    "message": "Message",
+    "submit": "Submit",
+    "error_empty": "Name, Email, or Message is not filled",
+    "success": "Message sent!",
+    "error": "Something went wrong, please try again later"
+  },
+  "projects": {
+    "loading_projects": "Loading projects...",
+    "all_projects": "All Projects",
+    "category_title": "{{category}}"
+  },
+  "specific_project": {
+    "loading": "Loading...",
+    "description": "Description",
+    "location": "Location",
+    "area": "Area",
+    "category": "Category",
+    "date": "Date",
+    "other_projects_in": "Other Projects in {{category}}"
+  }
+}
