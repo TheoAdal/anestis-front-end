@@ -1,7 +1,9 @@
 import "./TopBarNavStyles.scss";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "../../images/sitelogo2.png";
+
+import { useTranslation } from "react-i18next";
 
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -9,6 +11,18 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 function TopBarNav() {
+  const { i18n } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const currentLanguage = i18n.language;
+  const toggleLanguage = () => {
+    const newLanguage = currentLanguage === "en" ? "gr" : "en";
+    const searchParams = new URLSearchParams(location.search);
+    searchParams.set("lang", newLanguage);
+    navigate({ search: searchParams.toString() });
+  };
+
   return (
     <div className="nav-bar-container">
       <Navbar data-bs-theme="dark">
@@ -51,6 +65,11 @@ function TopBarNav() {
             </Link>
           </Nav>
         </Container>
+        <div className="language-toggle-btn">
+        <button  onClick={toggleLanguage}>
+            {currentLanguage === "en" ? "EN" : "GR"}
+          </button>
+        </div>
       </Navbar>
     </div>
   );

@@ -2,6 +2,8 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "./ContentWrapperStyles.scss";
 
+import { useTranslation } from 'react-i18next';
+
 import Home from "../HomePage/Home";
 import InfoPage from "../InfoPage/Info";
 import Contact from "../ContactPage/Contact";
@@ -13,6 +15,8 @@ import NotFound from "../ErrorPage/NotFound";
 import UploadProject from "../UploadProjectPage/UploadCompleteProject";
 
 function ContentWrapperComponent() {
+  const { t } = useTranslation();
+
   return (
     <div className="content-wrapper-container">
       <div className="content-wrapper-routes">

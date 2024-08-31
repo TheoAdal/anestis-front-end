@@ -7,6 +7,10 @@ import TopBarNav from "./components/TopBar/TopBarNav";
 import ContentWrapper from "./components/ContentWrapper/ContentWrapper";
 import FooterWrapper from "./components/Footer/FooterWrapper";
 
+import './i18n.js';
+import LanguageDetectorComponent from './LanguageDetectorComponent'; // Import the language detector component
+
+
 const App = () => { //KATHE FORA POU KANEI RELOAD BGAINEI TO LOADING
   const [isLoading, setIsLoading] = useState(true);
 
@@ -22,6 +26,7 @@ const App = () => { //KATHE FORA POU KANEI RELOAD BGAINEI TO LOADING
 
   return (
     <BrowserRouter>
+    <LanguageDetectorComponent>
       <div className="App">
         <div className="top-bar-container">
           {/* <TopBarNav /> */}
@@ -35,6 +40,7 @@ const App = () => { //KATHE FORA POU KANEI RELOAD BGAINEI TO LOADING
           <FooterWrapper />
         </div>
       </div>
+      </LanguageDetectorComponent>
     </BrowserRouter>
   );
 }
