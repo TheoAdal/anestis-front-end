@@ -1,16 +1,16 @@
 {
   "header": {
-    "home": "Home",
-    "services": "Services",
+    "home": "HOME",
+    "services": "SERVICES",
     "projects": {
-      "title": "Projects",
-      "hotels": "Hotels",
-      "houses": "Houses",
-      "stores": "Stores"
+      "title": "PROJECTS",
+      "hotels": "HOTELS",
+      "houses": "HOUSES",
+      "stores": "STORES"
     },
-    "info": "Info",
-    "about": "About",
-    "contact": "Contact"
+    "info": "INFO",
+    "about": "ABOUT",
+    "contact": "CONTACT"
   },
   "welcome": "Welcome to the Architect's ",
   "discover_services": "Discover our services and projects",

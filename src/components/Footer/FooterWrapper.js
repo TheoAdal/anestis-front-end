@@ -1,6 +1,6 @@
 import React from "react";
 import "./FooterStyles.scss";
-import logo from "../../images/logo512.png"; //logo
+import logo from "../../images/logo-white.png"; //logo
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 function FooterWrapper() {

@@ -14,11 +14,45 @@
   margin: 0 auto;
 }
 
-.carousel-image {
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-container img {
   width: 100%;
-  height: 100%; // Maintain aspect ratio
+  height: auto;
+  display: block;
+}
+
+.image-container .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    221,
+    180,
+    43,
+    0.684
+  ); /* Black color with 50% opacity */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.carousel-image {
+  // width: 100%;
+  // height: 100%; // Maintain aspect ratio
   object-fit: cover; // Ensures the image covers the entire container
   background-size: auto;
+  position: absolute;
+  border-radius: 4px;
+  mix-blend-mode: screen;
 }
 
 .projects-section {
@@ -33,7 +67,7 @@
 .project-image-container {
   width: calc(25% - 20px); // Adjust the width as needed
   margin: 10px;
-  border-radius: 8px;
+  border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
@@ -47,4 +81,26 @@
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* Base styles for the sliding container */
+.slide-next,
+.slide-prev {
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Slide to the left (next slide) */
+.slide-next {
+  transform: translateX(-100%);
+}
+
+/* Slide to the right (previous slide) */
+.slide-prev {
+  transform: translateX(100%);
+}
+
+/* Ensure smooth transition and reset position */
+.slide-next.d-flex,
+.slide-prev.d-flex {
+  transform: translateX(0);
 }

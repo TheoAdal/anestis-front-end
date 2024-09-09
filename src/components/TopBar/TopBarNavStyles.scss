@@ -1,37 +1,46 @@
 .nav-bar-container {
   .navbar {
-    background-color: #3333332d; // Dark background color of the navbar
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff; // Dark background color of the navbar
     backdrop-filter: blur(5px); //change blur here
     padding: 1rem 0;
-    position: fixed;
+    // position: fixed;
     top: 0;
     width: 100%;
-    height: 15%;
-    z-index: 2;
+    // height: 15%;
+    // z-index: 2;
+
+    .nav {
+      .nav-logo {
+        width: 120px; // Adjust logo size as needed
+        height: 120px; // Adjust logo size as needed
+        margin-right: 50px; // Margin between logo and text
+        margin-bottom: 0;
+        margin-left: 20px;
+      }
+    }
 
     .container {
       display: flex;
-      justify-content: flex-start;
+      justify-content: flex-end;
       align-items: center;
       margin-left: 10px;
-
-      .nav {
-        .nav-logo {
-          width: 80px; // Adjust logo size as needed
-          margin-right: 50px; // Margin between logo and text
-          margin-bottom: 0;
-          margin-left: 0;
-        }
-      }
+      margin-right: 0;
+      width: 100%;
 
       .top-bar-nav {
         align-items: center;
+        .nav-link,
+        .nav-dropdown {
+          color: #000;
+        }
 
         .link {
-          color: #e7dbdb;
+          color: black;
           text-decoration: none;
           margin: 0 1rem;
-          font-weight: bold;
+          // font-weight: bold;
 
           &:hover {
             text-decoration: underline;
@@ -39,26 +48,26 @@
         }
 
         .nav-dropdown {
-          .dropdown-menu {
-            background-color: #444444; // Background color of dropdown menu
-            border: none;
+          color: #000;
 
+          .dropdown-menu {
+            background-color: #fff; // Background color of dropdown menu
+            border: none;
             border-radius: 1;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); // Optional: Add shadow for depth
 
             .dropdown-item {
-              color: #ffffff;
               padding: 0.75rem 1.25rem;
               font-weight: normal;
-              transition: background-color 0.3s ease;
+              // transition: background-color 0.3s ease;
 
               &:hover {
-                background-color: #555555; // Hover background color
+                background-color: #fff; // Hover background color
                 text-decoration: none;
               }
 
               a {
-                color: #ffffff;
+                color: #000;
                 text-decoration: none;
               }
             }
@@ -77,7 +86,7 @@
   cursor: pointer;
   font-size: 16px;
   padding: 8px 16px;
-  margin-left: auto; // Align the button to the right
+  // margin-left: auto; // Align the button to the right
   transition: background-color 0.3s ease;
 }
 
