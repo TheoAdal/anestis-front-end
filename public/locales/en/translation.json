@@ -1,6 +1,19 @@
 {
-  "welcome": "Welcome to the Architect's Website",
-  "discover_services": "Discover the services and projects of our talented architect.",
+  "header": {
+    "home": "Home",
+    "services": "Services",
+    "projects": {
+      "title": "Projects",
+      "hotels": "Hotels",
+      "houses": "Houses",
+      "stores": "Stores"
+    },
+    "info": "Info",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "welcome": "Welcome to the Architect's ",
+  "discover_services": "Discover our services and projects",
   "carousel": {
     "title1": "Title 1",
     "description1": "Description 1",
