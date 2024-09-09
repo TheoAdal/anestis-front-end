@@ -1,12 +1,12 @@
 .footer-container {
   bottom: 0;
   // background-color: #333333de;
-  background-color: #ddd;
+  background-color: #262626;
   width: 100%;
   padding: 20px;
   bottom: 0;
   position: fixed;
-  color: #000;
+  color: #fff;
   // border-top: 5px solid #28c0a9;
 }
 
@@ -15,7 +15,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #ddd;
+  background-color: #262626;
 }
 
 .company-info {
@@ -30,7 +30,7 @@
   }
 
   p {
-    color: #000;
+    color: #fff;
     margin: 0;
   }
 }
@@ -44,7 +44,7 @@
   margin: 15px;
   text-align: right;
   p {
-    color: #000;
+    color: #fff;
     margin: 5px 0;
   }
 }

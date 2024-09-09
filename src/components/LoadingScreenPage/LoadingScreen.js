@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import './LoadingScreenStyles.scss';
-import logo from '../../images/sitelogo2.png'; 
+import React, { useState, useEffect } from "react";
+import "./LoadingScreenStyles.scss";
+import logo from "../../images/logo-white.png";
 
 const LoadingScreen = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,7 +15,7 @@ const LoadingScreen = () => {
   }, []);
 
   return (
-    <div className={`loading-screen ${isLoading ? 'loading' : 'loaded'}`}>
+    <div className={`loading-screen ${isLoading ? "loading" : "loaded"}`}>
       <img src={logo} alt="Logo" className="loading-logo" />
     </div>
   );

@@ -3,26 +3,31 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+
   .welcome {
     color: aliceblue;
   }
 }
 
 .carousel-container {
-  width: 100%;
-  max-width: 100%; // Adjust based on your design
-  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-row {
+  position: relative;
 }
 
 .image-container {
   position: relative;
   display: inline-block;
+  width: 100%;
+  overflow: hidden;
 }
 
-.image-container img {
+.image-container .image {
   width: 100%;
   height: auto;
-  display: block;
 }
 
 .image-container .overlay {
@@ -31,76 +36,64 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(
-    221,
-    180,
-    43,
-    0.684
-  ); /* Black color with 50% opacity */
+  background-color: rgba(164, 128, 31, 0.705); /* Dark overlay */
   opacity: 0;
   transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
 .image-container:hover .overlay {
   opacity: 1;
 }
 
-.carousel-image {
-  // width: 100%;
-  // height: 100%; // Maintain aspect ratio
-  object-fit: cover; // Ensures the image covers the entire container
-  background-size: auto;
-  position: absolute;
-  border-radius: 4px;
-  mix-blend-mode: screen;
-}
-
-.projects-section {
-  color: #ddd;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+.text-content {
+  text-align: center;
   padding: 20px;
 }
 
-.project-image-container {
-  width: calc(25% - 20px); // Adjust the width as needed
-  margin: 10px;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
-  &:hover {
-    transform: scale(1.05);
+.description {
+  font-size: 1rem;
+}
+
+.arrow-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #000;
+}
+
+.carousel-row.slide-next {
+  animation: slideNext 0.5s ease-out;
+}
+
+.carousel-row.slide-prev {
+  animation: slidePrev 0.5s ease-out;
+}
+
+@keyframes slideNext {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }
 
-.project-image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Base styles for the sliding container */
-.slide-next,
-.slide-prev {
-  transition: transform 0.5s ease-in-out;
-}
-
-/* Slide to the left (next slide) */
-.slide-next {
-  transform: translateX(-100%);
-}
-
-/* Slide to the right (previous slide) */
-.slide-prev {
-  transform: translateX(100%);
-}
-
-/* Ensure smooth transition and reset position */
-.slide-next.d-flex,
-.slide-prev.d-flex {
-  transform: translateX(0);
+@keyframes slidePrev {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
 }

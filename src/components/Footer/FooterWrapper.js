@@ -14,13 +14,15 @@ function FooterWrapper() {
           <p>Καραισκάκη 9 & Ειρήνης</p>
         </div>
       </div>
-      <div className="contact-info">
-        <p>
-          <FaPhoneAlt /> +30 2551031277
-        </p>
-        <p>
-          <FaEnvelope /> aadalakis@yahoo.gr
-        </p>
+      <div className="contact-info flex justify-end row">
+        <div className="flex items-center">
+          <FaPhoneAlt />
+          <p className="pl-2">+30 2551031277</p>
+        </div>
+        <div className="flex items-center">
+          <FaEnvelope />
+          <p className="pl-2">aadalakis@yahoo.gr</p>
+        </div>
       </div>
     </div>
     // </div>
