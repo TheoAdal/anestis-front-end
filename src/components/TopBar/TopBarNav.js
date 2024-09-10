@@ -1,13 +1,16 @@
 import "./TopBarNavStyles.scss";
 import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+// import Link from "next/link";
+
 import logo from "../../images/logo-white.png";
 import { useTranslation } from "react-i18next";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
+// import Container from "react-bootstrap/Container";
+// import Nav from "react-bootstrap/Nav";
+
+// import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
+import { Navbar } from "flowbite-react";
 
 function TopBarNav() {
   const { i18n } = useTranslation();
@@ -25,51 +28,28 @@ function TopBarNav() {
 
   return (
     <div className="nav-bar-container">
-      <Navbar data-bs-theme="dark">
-        <Navbar.Brand className="nav logo">
-          <Link to="/">
-            <img src={logo} alt="LOGO" className="nav-logo font-class" />
-          </Link>
+      <Navbar fluid rounded>
+        <Navbar.Brand as={Link} to="/">
+          <img src={logo} className="mr-3 h-17 w-12" alt="Logo" />
         </Navbar.Brand>
-        <Container className="container">
-          <Nav className="top-bar-nav">
-            <Link className="link" to="/">
-              {t("header.home")}
-            </Link>
-            {/* className="nav-link font-class" for other font styles*/}
-            <NavDropdown
-              title="PROJECTS"
-              // id="basic-nav-dropdown"
-              className="nav-dropdown"
-              style={{ color: "#444" }}
-            >
-              <NavDropdown.Item className="dropdown-item">
-                <Link to="/projects/hotels">{t("header.projects.hotels")}</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item">
-                <Link to="/projects/houses">{t("header.projects.houses")}</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item">
-                <Link to="/projects/stores">{t("header.projects.stores")}</Link>
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Link className="link" to="/info">
-              {t("header.info")}
-            </Link>
-            <Link className="link" to="/contact">
-              {t("header.contact")}
-            </Link>
-            {/* DEV */}
-            <Link className="link" to="/18927358297659876345987263">
-              Upload Project
-            </Link>
-          </Nav>
-          <div className="language-toggle-btn">
-            <Button onClick={toggleLanguage} variant="light">
-              {currentLanguage === "en" ? "EN" : "GR"}
-            </Button>
-          </div>
-        </Container>
+        <Navbar.Toggle />
+        <Navbar.Collapse className="[&>ul]:bg-white [&>ul]:absolute [&>ul]:md:relative [&>ul]:w-full md:relative">
+          <Navbar.Link as={Link} to="/projects">
+            {t("header.projects.title")}
+          </Navbar.Link>
+          <Navbar.Link as={Link} to="/info">
+            {t("header.info")}
+          </Navbar.Link>
+          <Navbar.Link as={Link} to="/contact">
+            {t("header.contact")}
+          </Navbar.Link>
+          <Navbar.Link as={Link} to="/18927358297659876345987263">
+            UPLOAD PROJECT
+          </Navbar.Link>
+          <Button onClick={toggleLanguage} variant="light">
+            {currentLanguage === "en" ? "EN" : "GR"}
+          </Button>
+        </Navbar.Collapse>
       </Navbar>
     </div>
   );

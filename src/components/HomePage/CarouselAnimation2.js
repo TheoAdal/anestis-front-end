@@ -5,6 +5,11 @@ import "./HomePageStyles.scss"; // Make sure this CSS file is included for style
 import Img1 from "../../images/img1.jpg";
 import Img2 from "../../images/img2.jpg";
 import Img3 from "../../images/img3.jpg";
+import f1 from "../../images/f1.jpg";
+import f2 from "../../images/f2.jpg";
+import f3 from "../../images/f3.jpg";
+import f4 from "../../images/f4.jpg";
+import f5 from "../../images/f5.jpg";
 
 const CustomCarousel = ({ items }) => {
   const [index, setIndex] = useState(0);
@@ -35,9 +40,9 @@ const CustomCarousel = ({ items }) => {
 
   return (
     <div className="carousel-container">
-      <Row className="mb-4 carousel-row">
+      <Row className="mb-4 carousel-row relative">
         {/* Display two cards with sliding animation */}
-        <Col className={`d-flex justify-content-center ${animate}`}>
+        <Col className={`d-flex justify-content-center ${animate} `}>
           <div className="image-container">
             <img
               className="image"
@@ -53,7 +58,7 @@ const CustomCarousel = ({ items }) => {
           </div>
         </Col>
 
-        <Col className={`d-flex justify-content-center ${animate}`}>
+        <Col className={`d-none d-sm-flex justify-content-center ${animate}`}>
           <div className="image-container">
             <img
               className="image"
@@ -73,27 +78,26 @@ const CustomCarousel = ({ items }) => {
           </div>
         </Col>
       </Row>
+      <button className="arrow-btn left-arrow" onClick={prevSlide}>
+        <AiOutlineLeft size={30} />
+      </button>
+      <button className="arrow-btn right-arrow" onClick={nextSlide}>
+        <AiOutlineRight size={30} />
+      </button>
 
       {/* Control Buttons */}
-      <div className="d-flex justify-content-between">
-        <button className="arrow-btn" onClick={prevSlide}>
-          <AiOutlineLeft size={20} />
-        </button>
-        <button className="arrow-btn" onClick={nextSlide}>
-          <AiOutlineRight size={20} />
-        </button>
-      </div>
+      <div className="d-flex justify-content-between relative"></div>
     </div>
   );
 };
 
 // Sample data for the cards
 const items = [
-  { image: Img1, title: "Card A", description: "This is card A" },
-  { image: Img2, title: "Card B", description: "This is card B" },
-  { image: Img3, title: "Card C", description: "This is card C" },
-  { image: Img1, title: "Card D", description: "This is card D" },
-  { image: Img2, title: "Card E", description: "This is card E" },
+  { image: f1, title: "Card A", description: "This is card A" },
+  { image: f2, title: "Card B", description: "This is card B" },
+  { image: f3, title: "Card C", description: "This is card C" },
+  { image: f4, title: "Card D", description: "This is card D" },
+  { image: f5, title: "Card E", description: "This is card E" },
 ];
 
 const App = () => {

@@ -1,4 +1,7 @@
 .nav-bar-container {
+  position: relative;
+  z-index: 10; /* Ensure navbar stays on top of carousel */
+
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -8,8 +11,7 @@
     // position: fixed;
     top: 0;
     width: 100%;
-    // height: 15%;
-    // z-index: 2;
+    z-index: 1000; /* Higher z-index for navbar to overlay content */
 
     .nav {
       .nav-logo {
@@ -22,11 +24,13 @@
     }
 
     .container {
-      display: flex;
+      // display: flex;
       justify-content: flex-end;
-      align-items: center;
-      margin-left: 10px;
-      margin-right: 0;
+      // align-items: center;
+      // margin-left: 10px;
+      // margin-right: 0;
+      // width: 60px;
+      margin: 0;
       width: 100%;
 
       .top-bar-nav {
@@ -48,8 +52,8 @@
         }
 
         .nav-dropdown {
-          color: #000;
-          z-index: 2;
+          position: relative;
+          z-index: 1500; /* Make sure dropdown has a higher z-index */
 
           .dropdown-menu {
             background-color: #fff; // Background color of dropdown menu
@@ -89,18 +93,31 @@
   padding: 8px 16px;
   // margin-left: auto; // Align the button to the right
   transition: background-color 0.3s ease;
+  z-index: 1500;
 }
 
 .language-toggle-btn:hover {
   // background-color: #0056b3;
 }
 
-@media (max-width: 768px) {
-  //Responsive for mobile use NOT READY
-  .nav-bar-container {
-    .container {
+//Responsive for mobile use NOT READY
+.nav-bar-container {
+  .container {
+    // For mobile screens (small screens)
+    @media (max-width: 768px) {
       flex-direction: column;
       align-items: flex-start;
+
+      .navbar-collapse {
+        position: static; /* Ensure it stays within normal flow */
+        width: 100%;
+        top: auto; /* Remove any 'top' settings */
+        transform: none; /* Ensure the menu expands downwards */
+      }
+
+      .navbar-toggler {
+        z-index: 1500;
+      }
 
       .top-bar-nav {
         flex-direction: column;
@@ -109,6 +126,20 @@
         .nav-link,
         .nav-dropdown {
           margin: 0.5rem 0;
+        }
+      }
+
+      .nav-dropdown {
+        position: relative;
+        z-index: 1500;
+        width: 100%; /* Ensure the dropdown is full-width */
+
+        .dropdown-menu {
+          display: block;
+          position: static; /* Make sure it stays in the flow */
+          background-color: #fff;
+          box-shadow: none; /* Optional: remove shadow for mobile */
+          border-radius: 0;
         }
       }
     }

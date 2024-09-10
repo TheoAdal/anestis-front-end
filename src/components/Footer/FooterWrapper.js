@@ -15,11 +15,11 @@ function FooterWrapper() {
         </div>
       </div>
       <div className="contact-info flex justify-end row">
-        <div className="flex items-center">
+        <div className="flex items-center justify-end">
           <FaPhoneAlt />
           <p className="pl-2">+30 2551031277</p>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center justify-end">
           <FaEnvelope />
           <p className="pl-2">aadalakis@yahoo.gr</p>
         </div>
