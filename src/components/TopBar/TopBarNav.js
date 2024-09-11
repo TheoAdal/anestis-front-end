@@ -36,21 +36,29 @@ function TopBarNav() {
         <Navbar.Collapse className=" [&>ul]:bg-white [&>ul]:absolute [&>ul]:md:relative [&>ul]:items-end [&>ul]:pr-5 [&>ul]:pb-3 [&>ul]:w-full [&&>ul]:mt-0 md:relative [&>ul]:shadow-md [&>ul]:md:shadow-none">
           <Navbar.Link
             as={Link}
-            to="/projects/hotels"
-            className="md:no-underline"
+            to="/projects"
+            className="md:no-underline nav-link"
           >
             {t("header.projects.title")}
           </Navbar.Link>
-          <Navbar.Link as={Link} to="/info" className="md:no-underline">
+          <Navbar.Link
+            as={Link}
+            to="/info"
+            className="md:no-underline nav-link"
+          >
             {t("header.info")}
           </Navbar.Link>
-          <Navbar.Link as={Link} to="/contact" className="md:no-underline">
+          <Navbar.Link
+            as={Link}
+            to="/contact"
+            className="md:no-underline nav-link"
+          >
             {t("header.contact")}
           </Navbar.Link>
           <Navbar.Link
             as={Link}
             to="/18927358297659876345987263"
-            className="md:no-underline"
+            className="md:no-underline nav-link"
           >
             UPLOAD PROJECT
           </Navbar.Link>

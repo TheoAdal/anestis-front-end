@@ -96,9 +96,9 @@
   z-index: 1500;
 }
 
-.language-toggle-btn:hover {
-  // background-color: #0056b3;
-}
+// .language-toggle-btn:hover {
+// background-color: #0056b3;
+// }
 
 //Responsive for mobile use NOT READY
 .nav-bar-container {
@@ -157,3 +157,12 @@ body {
 //   color: #ffffff ;
 //   // margin-bottom: 5px;
 // }
+
+.nav-link {
+  color: inherit; /* Optional: inherit the default color */
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: rgb(227 160 8) !important; /* This is Tailwind's yellow-400 */
+}

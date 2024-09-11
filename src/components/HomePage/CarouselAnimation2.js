@@ -41,7 +41,7 @@ const CustomCarousel = ({ items }) => {
       <Row className="mb-4 carousel-row relative">
         {/* Display two cards with sliding animation */}
         <Col className={`d-flex justify-content-center ${animate} `}>
-          <div className="image-container">
+          <div className="image-container h-[80vh]">
             <img
               className="image"
               src={items[index].image}
@@ -57,7 +57,7 @@ const CustomCarousel = ({ items }) => {
         </Col>
 
         <Col className={`d-none d-sm-flex justify-content-center ${animate}`}>
-          <div className="image-container">
+          <div className="image-container h-[80vh]">
             <img
               className="image"
               src={items[(index + 1) % items.length].image}
