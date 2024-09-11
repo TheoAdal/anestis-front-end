@@ -61,9 +61,9 @@ const SpecificProject = () => {
 
   return (
     <div className="specific-project">
-      <div className="flex flex-col items-start pl-4">
+      <div className="flex flex-col items-start px-4">
         <h1 className="text-3xl font-mono">{project.name}</h1>
-        <p className="text-gray-700 font-sans w-1/3 text-justify mt-3">
+        <p className="text-gray-700 font-sans w-full md:w-1/3 text-justify mt-3">
           {project.description}
         </p>
         <div className="details-section">
