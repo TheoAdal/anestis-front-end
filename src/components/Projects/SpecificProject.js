@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -23,7 +24,7 @@ const SpecificProject = () => {
         setCategory(response.data.category);
       } catch (error) {
         console.error("Error fetching project details:", error);
-        navigate('/404');
+        navigate("/404");
       }
     };
 
@@ -31,7 +32,7 @@ const SpecificProject = () => {
   }, [name, navigate]);
 
   if (!project) {
-    return <p>{t('specific_project.loading')}</p>;
+    return <p>{t("specific_project.loading")}</p>;
   }
 
   return (
@@ -47,22 +48,24 @@ const SpecificProject = () => {
       </div>
       <div className="details-section">
         <h1>{project.name}</h1>
-        <p>{t('specific_project.description')}: {project.description}</p>
         <p>
-          <strong>{t('specific_project.location')}:</strong> {project.location}
+          {t("specific_project.description")}: {project.description}
         </p>
         <p>
-          <strong>{t('specific_project.area')}:</strong> {project.area}
+          <strong>{t("specific_project.location")}:</strong> {project.location}
         </p>
         <p>
-          <strong>{t('specific_project.category')}:</strong> {project.category}
+          <strong>{t("specific_project.area")}:</strong> {project.area}
         </p>
         <p>
-          <strong>{t('specific_project.date')}:</strong> {project.date}
+          <strong>{t("specific_project.category")}:</strong> {project.category}
+        </p>
+        <p>
+          <strong>{t("specific_project.date")}:</strong> {project.date}
         </p>
       </div>
       <div className="project-grid-section">
-        <h2>{t('specific_project.other_projects_in', { category })}</h2>
+        <h2>{t("specific_project.other_projects_in", { category })}</h2>
         <ProjectsGrid category={category} />
       </div>
     </div>

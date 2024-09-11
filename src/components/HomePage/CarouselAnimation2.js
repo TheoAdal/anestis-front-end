@@ -1,10 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import "./HomePageStyles.scss"; // Make sure this CSS file is included for styles
-import Img1 from "../../images/img1.jpg";
-import Img2 from "../../images/img2.jpg";
-import Img3 from "../../images/img3.jpg";
 import f1 from "../../images/f1.jpg";
 import f2 from "../../images/f2.jpg";
 import f3 from "../../images/f3.jpg";
@@ -93,16 +91,16 @@ const CustomCarousel = ({ items }) => {
 
 // Sample data for the cards
 const items = [
-  { image: f1, title: "Card A", description: "This is card A" },
-  { image: f2, title: "Card B", description: "This is card B" },
-  { image: f3, title: "Card C", description: "This is card C" },
-  { image: f4, title: "Card D", description: "This is card D" },
-  { image: f5, title: "Card E", description: "This is card E" },
+  { image: f1, title: "Αθήνα", description: "Ανακαίνιση Διαμερίσματος" },
+  { image: f2, title: "Αθήνα", description: "Ιατρείο" },
+  { image: f3, title: "Ξάνθη", description: "Μονοκατοικία" },
+  { image: f4, title: "Νάξος", description: "Κατοικία" },
+  { image: f5, title: "Αλεξανδρούπολη", description: "Διαμέρισμα" },
 ];
 
 const App = () => {
   return (
-    <div className="container mt-5">
+    <div className="container">
       <CustomCarousel items={items} />
     </div>
   );

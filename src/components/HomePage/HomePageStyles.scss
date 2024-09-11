@@ -98,7 +98,7 @@
 }
 
 .arrow-btn {
-  width: 5%;
+  width: 45px;
   outline: none;
   box-shadow: none;
   position: absolute;
@@ -114,6 +114,9 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+
+  @media (max-width: 768px) {
+  }
 }
 
 .arrow-btn.left-arrow {
