@@ -46,38 +46,66 @@ const ProjectsGrid = () => {
     setProjects([
       {
         title: "Project 1",
-        category: "houses",
+        category: "Houses",
         name: "1",
         description: "This is a description for project 1",
         images: [f1],
       },
       {
         title: "Project 2",
-        category: "houses",
+        category: "Houses",
         name: "2",
         description: "This is a description for project 2",
         images: [f2],
       },
       {
         title: "Project 3",
-        category: "houses",
+        category: "Hotels",
         name: "3",
         description: "This is a description for project 3",
         images: [f3],
       },
       {
         title: "Project 4",
-        category: "houses",
+        category: "Hotels",
         name: "4",
         description: "This is a description for project 4",
         images: [f4],
       },
       {
         title: "Project 5",
-        category: "houses",
+        category: "Stores",
         name: "5",
         description: "This is a description for project 5",
         images: [f5],
+      },
+      {
+        title: "Project 6",
+        category: "Stores",
+        name: "6",
+        description: "This is a description for project 6",
+        images: [f1],
+      },
+      {
+        title: "Project 7",
+        category: "Houses",
+        name: "7",
+        description: "This is a description for project 7",
+        images: [f2],
+      },
+      {
+        title: "Project 8",
+        category: "Houses",
+        name: "8",
+        description: "This is a description for project 8",
+        images: [f3],
+      },
+      {
+        title: "Project 9",
+        category: "Hotels",
+        name: "9",
+        description: "This is a description for project 9",
+        images: [f4],
       },
     ]);
   }, [category, navigate]);
@@ -112,25 +140,31 @@ const ProjectsGrid = () => {
         {projects.length === 0 ? (
           <p>{t("projects.loading_projects")}</p>
         ) : (
-          projects.map((project, index) => (
-            <div key={index} className="project-card h-[40vh]">
-              <Link to={`/projects/${project.category}/${project.name}`}>
-                <div className="image-container h-[50vh]">
-                  <img
-                    className="image"
-                    src={project.images[0]}
-                    alt="Current slide"
-                  />
-                  <div className="overlay">
-                    <div className="text-content">
-                      <div className="title">{project.title}</div>
-                      <div className="description">{project.description}</div>
+          projects
+            .filter(
+              (project) =>
+                filterCategory === "Show all" ||
+                project.category === filterCategory
+            )
+            .map((project, index) => (
+              <div key={index} className="project-card h-[40vh]">
+                <Link to={`/projects/${project.category}/${project.name}`}>
+                  <div className="image-container h-[50vh]">
+                    <img
+                      className="image"
+                      src={project.images[0]}
+                      alt="Current slide"
+                    />
+                    <div className="overlay">
+                      <div className="text-content">
+                        <div className="title">{project.title}</div>
+                        <div className="description">{project.description}</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            </div>
-          ))
+                </Link>
+              </div>
+            ))
         )}
       </div>
     </div>

@@ -8,6 +8,9 @@ module.exports = {
       colors: {
         customGold: "rgba(164, 128, 31, 0.705)",
       },
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+      },
     },
   },
   plugins: [flowbite.plugin()],
