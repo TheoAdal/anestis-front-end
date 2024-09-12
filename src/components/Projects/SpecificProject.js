@@ -87,7 +87,8 @@ const SpecificProject = () => {
             <img
               src={image}
               alt={`Project Image ${index + 1}`}
-              className="h-[50vh] mr-3 mb-3 "
+              className="h-[50vh] mr-3 mb-3"
+              key={index}
             />
           ))}
         </div>
