@@ -18,11 +18,11 @@ function InfoPage() {
           {t("team_title")}
         </p>
 
-        <div className="flex sm:flex-row flex-col justify-start items-start mb-10">
+        <div className="flex md:flex-row flex-col justify-start items-start mb-10">
           <img
             src={team1}
             alt="Team Member 1"
-            className="sm:w-96 w-42 grayscale mr-8 mt-1 mb-6"
+            className="md:w-96 w-full grayscale mr-8 mt-1 mb-6"
           />
           <div className="flex flex-col items-start">
             <p className="text-gray-800 text-xl my-0">
@@ -33,11 +33,11 @@ function InfoPage() {
             </p>
           </div>
         </div>
-        <div className="flex sm:flex-row flex-col justify-start items-start mb-10">
+        <div className="flex md:flex-row flex-col justify-start items-start mb-10">
           <img
             src={team2}
             alt="Team Member 2"
-            className="sm:w-96 w-42 grayscale mr-8 mt-1 mb-6"
+            className="md:w-96 w-full grayscale mr-8 mt-1 mb-6"
           />
           <div className="flex flex-col items-start">
             <p className="text-gray-800 text-xl my-0">
