@@ -11,15 +11,26 @@ import f3 from "../../images/f3.jpg";
 import f4 from "../../images/f4.jpg";
 import f5 from "../../images/f5.jpg";
 
-const validCategories = ["hotels", "houses", "stores", "offices", "apartments"]; // Add your valid categories here
-const categories = ["Show all", "Houses", "Hotels", "Stores"];
-
 const ProjectsGrid = () => {
   const { category } = useParams();
   const navigate = useNavigate();
   const { t } = useTranslation();
   const [projects, setProjects] = useState([]);
   const [filterCategory, setFilterCategory] = useState("Show all");
+
+  const validCategories = [
+    "hotels",
+    "houses",
+    "stores",
+    "offices",
+    "apartments",
+  ]; // Add your valid categories here
+  const categories = [
+    t("projects.filters.all"),
+    t("projects.filters.hotels"),
+    t("projects.filters.houses"),
+    t("projects.filters.stores"),
+  ];
 
   useEffect(() => {
     // if (!validCategories.includes(category)) {
@@ -112,7 +123,6 @@ const ProjectsGrid = () => {
 
   return (
     <div className="projects-grid-container">
-      {/* {filterCategory} */}
       <div className="flex flex-wrap justify-center">
         {categories.map((category, index) => (
           <span

@@ -49,7 +49,7 @@
     "all_projects": "All Projects",
     "category_title": "{{category}}",
     "filters": {
-      "all": "All",
+      "all": "Show all",
       "hotels": "Hotels",
       "houses": "Houses",
       "stores": "Stores"

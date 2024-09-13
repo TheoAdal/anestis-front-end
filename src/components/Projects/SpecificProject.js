@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Carousel } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import ProjectsGrid from "./ProjectGrid";
 import "./SpecificProjectStyles.scss";

@@ -1,15 +1,11 @@
 import "./TopBarNavStyles.scss";
 import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-// import Link from "next/link";
-
 import logo from "../../images/logo-white.png";
 import { useTranslation } from "react-i18next";
-// import Container from "react-bootstrap/Container";
-// import Nav from "react-bootstrap/Nav";
 
-// import NavDropdown from "react-bootstrap/NavDropdown";
-import Button from "react-bootstrap/Button";
+import { Button } from "flowbite-react";
+// import Button from "react-bootstrap/Button";
 import { Navbar } from "flowbite-react";
 
 function TopBarNav() {
@@ -64,10 +60,10 @@ function TopBarNav() {
           </Navbar.Link>
           <Button
             onClick={toggleLanguage}
-            variant="light"
-            className="mr-4 mt-2"
+            color="gray"
+            className="mr-4 mt-2 outline-none shadow-none"
           >
-            {currentLanguage === "en" ? "EN" : "GR"}
+            {currentLanguage === "en" ? "GR" : "EN"}
           </Button>
         </Navbar.Collapse>
       </Navbar>
