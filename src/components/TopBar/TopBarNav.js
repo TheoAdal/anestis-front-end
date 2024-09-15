@@ -63,7 +63,7 @@ function TopBarNav() {
             to="/2034897298456896894587547854"
             className="md:no-underline nav-link"
           >
-            UPLOAD PROJECT
+            EDIT PROJECT
           </Navbar.Link>
           <Button
             onClick={toggleLanguage}

@@ -37,6 +37,11 @@ function ContentWrapperComponent() {
             path="/18927358297659876345987263"
             element={<UploadProject />}
           />
+          <Route
+            path="/2034897298456896894587547854"
+            element={<ProjectEditList />}
+          />
+          <Route path="/editproject/:id" element={<EditProject />} />
         </Routes>
       </div>
     </div>
