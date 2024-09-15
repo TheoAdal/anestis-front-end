@@ -63,6 +63,9 @@ function TopBarNav() {
             <Link className="link" to="/18927358297659876345987263">
               Upload Project
             </Link>
+            <Link className="link" to="/2034897298456896894587547854">
+              Edit Projects
+            </Link>
           </Nav>
           <div className="language-toggle-btn">
             <Button onClick={toggleLanguage} variant="light">

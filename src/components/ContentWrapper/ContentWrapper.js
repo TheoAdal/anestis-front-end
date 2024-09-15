@@ -10,9 +10,11 @@ import Contact from "../ContactPage/Contact";
 import ProjectsGrid from "../Projects/ProjectGrid";
 import SpecificProject from "../Projects/SpecificProject";
 
-import LoadingScreen from "../LoadingScreenPage/LoadingScreen";
+// import LoadingScreen from "../LoadingScreenPage/LoadingScreen";
 import NotFound from "../ErrorPage/NotFound"; 
 import UploadProject from "../UploadProjectPage/UploadCompleteProject";
+import ProjectEditList from "../EditProjectPage/ProjectEditList";
+import EditProject from "../EditProjectPage/EditProject";
 
 function ContentWrapperComponent() {
   const { t } = useTranslation();
@@ -28,6 +30,8 @@ function ContentWrapperComponent() {
           <Route path="/projects/:category/:name" element={<SpecificProject />} />
           <Route path="*" element={<NotFound />} /> {/*for undefined routes*/}
           <Route path="/18927358297659876345987263" element={<UploadProject  />} />
+          <Route path="/2034897298456896894587547854" element={<ProjectEditList />} />
+          <Route path="/editproject/:id" element={<EditProject />} />
         </Routes>
       </div>
     </div>
