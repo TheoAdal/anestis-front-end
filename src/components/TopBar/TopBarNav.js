@@ -3,11 +3,10 @@ import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import logo from "../../images/logo-white.png";
 import { useTranslation } from "react-i18next";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Button from "react-bootstrap/Button";
+
+import { Button } from "flowbite-react";
+// import Button from "react-bootstrap/Button";
+import { Navbar } from "flowbite-react";
 
 function TopBarNav() {
   const { i18n } = useTranslation();
@@ -25,54 +24,55 @@ function TopBarNav() {
 
   return (
     <div className="nav-bar-container">
-      <Navbar data-bs-theme="dark">
-        <Navbar.Brand className="nav logo">
-          <Link to="/">
-            <img src={logo} alt="LOGO" className="nav-logo font-class" />
-          </Link>
+      <Navbar fluid rounded className="max-h-full pt-0 pb-6">
+        <Navbar.Brand as={Link} to="/">
+          <img src={logo} className="h-[150px] w-[150px]" alt="Logo" />
         </Navbar.Brand>
-        <Container className="container">
-          <Nav className="top-bar-nav">
-            <Link className="link" to="/">
-              {t("header.home")}
-            </Link>
-            {/* className="nav-link font-class" for other font styles*/}
-            <NavDropdown
-              title="PROJECTS"
-              // id="basic-nav-dropdown"
-              className="nav-dropdown"
-              style={{ color: "#444" }}
-            >
-              <NavDropdown.Item className="dropdown-item">
-                <Link to="/projects/hotels">{t("header.projects.hotels")}</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item">
-                <Link to="/projects/houses">{t("header.projects.houses")}</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item className="dropdown-item">
-                <Link to="/projects/stores">{t("header.projects.stores")}</Link>
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Link className="link" to="/info">
-              {t("header.info")}
-            </Link>
-            <Link className="link" to="/contact">
-              {t("header.contact")}
-            </Link>
-            {/* DEV */}
-            <Link className="link" to="/18927358297659876345987263">
-              Upload Project
-            </Link>
-            <Link className="link" to="/2034897298456896894587547854">
-              Edit Projects
-            </Link>
-          </Nav>
-          <div className="language-toggle-btn">
-            <Button onClick={toggleLanguage} variant="light">
-              {currentLanguage === "en" ? "EN" : "GR"}
-            </Button>
-          </div>
-        </Container>
+        <Navbar.Toggle className="outline-none shadow-none" />
+        <Navbar.Collapse className=" [&>ul]:bg-white [&>ul]:absolute [&>ul]:md:relative [&>ul]:items-end [&>ul]:pr-5 [&>ul]:pb-3 [&>ul]:w-full [&&>ul]:mt-0 md:relative [&>ul]:shadow-md [&>ul]:md:shadow-none">
+          <Navbar.Link
+            as={Link}
+            to="/projects"
+            className="md:no-underline nav-link"
+          >
+            {t("header.projects.title")}
+          </Navbar.Link>
+          <Navbar.Link
+            as={Link}
+            to="/info"
+            className="md:no-underline nav-link"
+          >
+            {t("header.info")}
+          </Navbar.Link>
+          <Navbar.Link
+            as={Link}
+            to="/contact"
+            className="md:no-underline nav-link"
+          >
+            {t("header.contact")}
+          </Navbar.Link>
+          <Navbar.Link
+            as={Link}
+            to="/18927358297659876345987263"
+            className="md:no-underline nav-link"
+          >
+            UPLOAD PROJECT
+          </Navbar.Link>
+          <Navbar.Link
+            as={Link}
+            to="/2034897298456896894587547854"
+            className="md:no-underline nav-link"
+          >
+            UPLOAD PROJECT
+          </Navbar.Link>
+          <Button
+            onClick={toggleLanguage}
+            color="gray"
+            className="mr-4 mt-2 outline-none shadow-none"
+          >
+            {currentLanguage === "en" ? "GR" : "EN"}
+          </Button>
+        </Navbar.Collapse>
       </Navbar>
     </div>
   );

@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const LanguageDetectorComponent = ({ children }) => {
   const { i18n } = useTranslation();
@@ -9,7 +9,7 @@ const LanguageDetectorComponent = ({ children }) => {
 
   useEffect(() => {
     const searchParams = new URLSearchParams(location.search);
-    const lang = searchParams.get('lang');
+    const lang = searchParams.get("lang");
 
     if (lang && lang !== i18n.language) {
       i18n.changeLanguage(lang);

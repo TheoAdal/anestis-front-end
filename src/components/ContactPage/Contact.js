@@ -3,6 +3,8 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "./ContactPageStyles.scss";
 import emailjs from "@emailjs/browser";
 import { useTranslation } from "react-i18next";
+import contactOffice from "../../images/contact.png";
+import contactMap from "../../images/contact-map.png";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,89 +24,53 @@ const Contact = () => {
 
     // Check if any of the fields are empty
     if (!formData.user_name || !formData.user_email || !formData.message) {
-      setStateMessage(t('contact.error_empty'));
+      setStateMessage(t("contact.error_empty"));
       setTimeout(() => {
         setStateMessage(null);
       }, 4000); // hide message after 4 seconds
       return; // Exit early if any field is empty
     }
 
-    emailjs.sendForm(
-      process.env.REACT_APP_SERVICE_ID,
-      process.env.REACT_APP_TEMPLATE_ID,
-      e.target,
-      process.env.REACT_APP_PUBLIC_KEY
-    )
-    .then(
-      (result) => {
-        setStateMessage(t('contact.success'));
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        e.target,
+        process.env.REACT_APP_PUBLIC_KEY
+      )
+      .then(
+        (result) => {
+          setStateMessage(t("contact.success"));
+          setIsSubmitting(false);
+          setTimeout(() => {
+            setStateMessage(null);
+          }, 5000); // hide message after 5 seconds
+        },
+        (error) => {
+          console.error("Error sending email:", error);
+          setStateMessage(t("contact.error"));
+        }
+      )
+      .finally(() => {
         setIsSubmitting(false);
-        setTimeout(() => {
-          setStateMessage(null);
-        }, 5000); // hide message after 5 seconds
-      },
-      (error) => {
-        console.error('Error sending email:', error);
-        setStateMessage(t('contact.error'));
-      }
-    )
-    .finally(() => {
-      setIsSubmitting(false);
-    });
+      });
 
     e.target.reset();
   };
 
   return (
-    <Container className="container">
-      <Row>
-        <Col lg={8}>
-          <div className="section-box">
-            <h2>{t('contact.title')}</h2>
-            <p>{t('contact.intro')}</p>
-          </div>
-          <Form className="form-box" onSubmit={sendEmail}>
-            <Form.Group className="form-group">
-              <Form.Label>{t('contact.name')}</Form.Label>
-              <Form.Control
-                type="text"
-                name="user_name"
-                placeholder={t('contact.name')}
-              />
-            </Form.Group>
-
-            <Form.Group className="form-group">
-              <Form.Label>{t('contact.email')}</Form.Label>
-              <Form.Control
-                type="email"
-                name="user_email"
-                placeholder={t('contact.email')}
-              />
-            </Form.Group>
-
-            <Form.Group className="form-group">
-              <Form.Label>{t('contact.message')}</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={4}
-                name="message"
-                placeholder={t('contact.message')}
-              />
-            </Form.Group>
-            <Button
-              variant="primary"
-              className="button"
-              type="submit"
-              value="Send"
-              disabled={isSubmitting}
-            >
-              {t('contact.submit')}
-            </Button>
-            {stateMessage && <p>{stateMessage}</p>}
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+    <div className="flex md:flex-row flex-col px-7 pb-12">
+      <img
+        src={contactOffice}
+        className="grayscale md:w-2/5 w-full mr-10 md:mb-0 mb-10"
+        alt="office"
+      />
+      <img
+        src={contactMap}
+        className="grayscale md:w-2/5 w-full mr-10"
+        alt="office"
+      />
+    </div>
   );
 };
 
