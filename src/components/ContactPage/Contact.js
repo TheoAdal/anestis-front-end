@@ -38,6 +38,7 @@ const Contact = () => {
     .then(
       (result) => {
         setStateMessage(t('contact.success'));
+        alert("Form has been submitted. Thnak you for reaching out!");
         setIsSubmitting(false);
         setTimeout(() => {
           setStateMessage(null);
