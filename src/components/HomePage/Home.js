@@ -1,15 +1,15 @@
 import React from "react";
 import "./HomePageStyles.scss";
 
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
-import CarouselAnimation from "./CarouselAnimation";
+// import CarouselAnimation from "./CarouselAnimation";
 import CarouselAnimation2 from "./CarouselAnimation2";
 // import Details from "./Details.js";
-import ProjectSection from "./ProjectSection.js";
+// import ProjectSection from "./ProjectSection.js";
 
 function Home() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
     <div className="carousel-wrapper">

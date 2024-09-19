@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 // import axios from 'axios';
 import "./HomePageStyles.scss";
 import pr1 from "../../images/pr1.jpg";
@@ -6,21 +6,20 @@ import pr2 from "../../images/pr2.jpg";
 import pr3 from "../../images/pr3.jpg";
 
 const ProjectsSection = () => {
-    const images = [
-      {
-        src: pr1,
-        description: "Project 1",
-      },
-      {
-        src: pr2,
-        description: "Project 2",
-      },
-      {
-        src: pr3,
-        description: "Project 3",
-      },
-      
-    ];
+  const images = [
+    {
+      src: pr1,
+      description: "Project 1",
+    },
+    {
+      src: pr2,
+      description: "Project 2",
+    },
+    {
+      src: pr3,
+      description: "Project 3",
+    },
+  ];
 
   return (
     <div className="projects-section">

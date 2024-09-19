@@ -9,19 +9,19 @@ function FooterWrapper() {
     <div className="footer-content">
       <div className="company-info">
         <img src={logo} alt="Company Logo" className="company-logo" />
-        <div className="name-address">
-          <h4>Anestis Adalakis</h4>
-          <p>Καραισκάκη 9 & Ειρήνης</p>
+        <div className="name-address flex flex-col items-start">
+          <h4>Architect</h4>
+          <p>Rohn Str. 92</p>
         </div>
       </div>
       <div className="contact-info flex justify-end row">
-        <div className="flex items-center">
+        <div className="flex items-center justify-end">
           <FaPhoneAlt />
-          <p className="pl-2">+30 2551031277</p>
+          <p className="pl-2">+30 XXXXXXXX</p>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center justify-end">
           <FaEnvelope />
-          <p className="pl-2">aadalakis@yahoo.gr</p>
+          <p className="pl-2">axdarchitects@gmail.gr</p>
         </div>
       </div>
     </div>
