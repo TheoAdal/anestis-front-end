@@ -31,27 +31,16 @@ const Contact = () => {
       return; // Exit early if any field is empty
     }
 
-    emailjs
-      .sendForm(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
-        e.target,
-        process.env.REACT_APP_PUBLIC_KEY
-      )
-      .then(
-        (result) => {
-          setStateMessage(t("contact.success"));
-          setIsSubmitting(false);
-          setTimeout(() => {
-            setStateMessage(null);
-          }, 5000); // hide message after 5 seconds
-        },
-        (error) => {
-          console.error("Error sending email:", error);
-          setStateMessage(t("contact.error"));
-        }
-      )
-      .finally(() => {
+    emailjs.sendForm(
+      process.env.REACT_APP_SERVICE_ID,
+      process.env.REACT_APP_TEMPLATE_ID,
+      e.target,
+      process.env.REACT_APP_PUBLIC_KEY
+    )
+    .then(
+      (result) => {
+        setStateMessage(t('contact.success'));
+        alert("Form has been submitted. Thnak you for reaching out!");
         setIsSubmitting(false);
       });
 
