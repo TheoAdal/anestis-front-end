@@ -2,12 +2,14 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import "./HomePageStyles.scss"; // Make sure this CSS file is included for styles
-import f1 from "../../images/f1.jpg";
-import f2 from "../../images/f2.jpg";
-import f3 from "../../images/f3.jpg";
-import f4 from "../../images/f4.jpg";
-import f5 from "../../images/f5.jpg";
+
+import f1 from "../../images/tinyApartments/TinyApartments1.jpg";
+import f2 from "../../images/tinyApartments/TinyApartments2.jpg";
+import f3 from "../../images/tinyApartments/TinyApartments3.jpg";
+import f4 from "../../images/tinyApartments/TinyApartments4.jpg";
+import f5 from "../../images/tinyApartments/TinyApartments5.jpg";
 
 const CustomCarousel = ({ items }) => {
   const [index, setIndex] = useState(0);
@@ -41,46 +43,50 @@ const CustomCarousel = ({ items }) => {
       <Row className="mb-4 carousel-row relative">
         {/* Display two cards with sliding animation */}
         <Col className={`d-flex justify-content-center ${animate} `}>
-          <div className="image-container h-[80vh]">
-            <img
-              className="image"
-              src={items[index].image}
-              alt="Current slide"
-            />
-            <div className="overlay">
-              <div className="text-content">
-                <div className="title">{items[index].title}</div>
-                <div className="description">{items[index].description}</div>
+          <Link to={`/projects/${items.category}/${items.name}`}>
+            <div className="image-container h-[80vh]">
+              <img
+                className="image"
+                src={items[index].image}
+                alt="Current slide"
+              />
+              <div className="overlay">
+                <div className="text-content">
+                  <div className="title">{items[index].title}</div>
+                  <div className="description">{items[index].description}</div>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         </Col>
 
         <Col className={`d-none d-sm-flex justify-content-center ${animate}`}>
-          <div className="image-container h-[80vh]">
-            <img
-              className="image"
-              src={items[(index + 1) % items.length].image}
-              alt="Next slide"
-            />
-            <div className="overlay">
-              <div className="text-content">
-                <div className="title">
-                  {items[(index + 1) % items.length].title}
-                </div>
-                <div className="description">
-                  {items[(index + 1) % items.length].description}
+          <Link to={`/projects/${items.category}/${items.name}`}>
+            <div className="image-container h-[80vh]">
+              <img
+                className="image"
+                src={items[(index + 1) % items.length].image}
+                alt="Next slide"
+              />
+              <div className="overlay">
+                <div className="text-content">
+                  <div className="title">
+                    {items[(index + 1) % items.length].title}
+                  </div>
+                  <div className="description">
+                    {items[(index + 1) % items.length].description}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         </Col>
       </Row>
       <button className="arrow-btn left-arrow" onClick={prevSlide}>
-        <AiOutlineLeft size={30} />
+        <AiOutlineLeft size={20} />
       </button>
       <button className="arrow-btn right-arrow" onClick={nextSlide}>
-        <AiOutlineRight size={30} />
+        <AiOutlineRight size={20} />
       </button>
 
       {/* Control Buttons */}
@@ -91,11 +97,41 @@ const CustomCarousel = ({ items }) => {
 
 // Sample data for the cards
 const items = [
-  { image: f1, title: "Αθήνα", description: "Ανακαίνιση Διαμερίσματος" },
-  { image: f2, title: "Αθήνα", description: "Ιατρείο" },
-  { image: f3, title: "Ξάνθη", description: "Μονοκατοικία" },
-  { image: f4, title: "Νάξος", description: "Κατοικία" },
-  { image: f5, title: "Αλεξανδρούπολη", description: "Διαμέρισμα" },
+  {
+    image: f1,
+    title: "Tiny Apartments",
+    description: "Αλεξανδρούπολη",
+    category: "Houses",
+    name: "tiny-apartments",
+  },
+  {
+    image: f2,
+    title: "Tiny Apartments",
+    description: "Αλεξανδρούπολη",
+    category: "Houses",
+    name: "tiny-apartments",
+  },
+  {
+    image: f3,
+    title: "Tiny Apartments",
+    description: "Αλεξανδρούπολη",
+    category: "Houses",
+    name: "tiny-apartments",
+  },
+  {
+    image: f4,
+    title: "Tiny Apartments",
+    description: "Αλεξανδρούπολη",
+    category: "Houses",
+    name: "tiny-apartments",
+  },
+  {
+    image: f5,
+    title: "Tiny Apartments",
+    description: "Αλεξανδρούπολη",
+    category: "Houses",
+    name: "tiny-apartments",
+  },
 ];
 
 const App = () => {
