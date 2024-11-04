@@ -20,33 +20,19 @@ const SpecificProject = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    // const fetchProjectDetails = async () => {
-    //   try {
-    //     const response = await axios.get(
-    //       `http://localhost:5000/getprojects/getspecific/${name}`
-    //     );
-    //     setProject(response.data);
-    //     setCategory(response.data.category);
-    //   } catch (error) {
-    //     console.error("Error fetching project details:", error);
-    //     // navigate("/404");
-    //   }
-    // };
-    // fetchProjectDetails();
-
-    console.log(name);
-    setProject({
-      title: name,
-      category: "houses",
-      name: `project-${name}`,
-      description: `Αυτό το έργο αρχιτεκτονικής ανακαίνισης επικεντρώνεται στην 
-      αναζωογόνηση μιας υπάρχουσας κατοικίας. Ο ανασχεδιασμός βελτιώνει τη λειτουργικότητα, 
-      διατηρώντας ταυτόχρονα τον αρχικό χαρακτήρα του κτιρίου. Σύγχρονα υλικά και βιώσιμες πρακτικές 
-      ενσωματώνονται για να βελτιώσουν την ενεργειακή απόδοση, την άνεση 
-      και την αισθητική, δημιουργώντας μια αρμονική σύνθεση σύγχρονου 
-      σχεδιασμού με παραδοσιακά στοιχεία.`,
-      images: [f1, f3, f5],
-    });
+    const fetchProjectDetails = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:5000/getprojects/getspecific/${name}`
+        );
+        setProject(response.data);
+        setCategory(response.data.category);
+      } catch (error) {
+        console.error("Error fetching project details:", error);
+        // navigate("/404");
+      }
+    };
+    fetchProjectDetails();
   }, [name, navigate]);
 
   if (!project) {
@@ -66,20 +52,7 @@ const SpecificProject = () => {
           {project.description}
         </p>
         <div className="details-section">
-          {/* <p>
-            <strong>{t("specific_project.location")}:</strong>{" "}
-            {project.location}
-          </p>
-          <p>
-            <strong>{t("specific_project.area")}:</strong> {project.area}
-          </p>
-          <p>
-            <strong>{t("specific_project.category")}:</strong>{" "}
-            {project.category}
-          </p>
-          <p>
-            <strong>{t("specific_project.date")}:</strong> {project.date}
-          </p> */}
+          
         </div>
         <div className="carousel-section flex flex-wrap">
           {project.images.map((image, index) => (

@@ -99,7 +99,7 @@ const ProjectsGrid = () => {
                     <div className="overlay">
                       <div className="text-content">
                         <div className="title">{project.title}</div>
-                        <div className="description">{project.description}</div>
+                        <div className="description">{project.location}</div>
                       </div>
                     </div>
                   </div>
