@@ -1,60 +1,180 @@
+// ProjectStyles.scss
+
+$primary-color: #ffcc00; // Yellow color for active states
+$text-color: #333; // Main text color
+$hover-color: #ffdd57; // Hover color for links
+
 .projects-grid-container {
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
 
   h1 {
-    color: #fff;
+    margin: 20px 0;
+    color: $text-color;
+    text-align: center;
   }
-}
 
-.categories {
-  margin-bottom: 20px;
+  .category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
 
-  button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    .filter-option {
+      margin: 0 10px;
+      cursor: pointer;
+      font-weight: bold;
+      color: $text-color;
+      transition: color 0.3s;
 
-    &:hover {
-      background-color: #0056b3;
+      &.active {
+        color: $primary-color;
+      }
+
+      &:hover {
+        color: $hover-color;
+      }
     }
   }
-}
 
-.projects-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  p {
-    color: #fff;
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px; // Space between cards
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .image-container {
+        position: relative;
+        height: 300px; // Fixed height for images
+        overflow: hidden;
+
+        .image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.3s;
+
+          &:hover {
+            transform: scale(1.1); // Zoom effect on hover
+          }
+        }
+
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(0, 0, 0, 0.5); // Semi-transparent overlay
+          opacity: 0;
+          transition: opacity 0.3s;
+
+          .text-content {
+            color: white;
+            text-align: center;
+
+            .title {
+              font-size: 1.5rem;
+              font-weight: bold;
+            }
+
+            .description {
+              font-size: 1rem;
+            }
+          }
+        }
+
+        &:hover .overlay {
+          opacity: 1; // Show overlay on hover
+        }
+      }
+    }
+  }
+
+  .error-message {
+    color: red; // Error message color
+    margin: 20px 0;
+    text-align: center;
   }
 }
 
-.project-card {
-  background-color: #f9f9f9;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 200px;
 
-  .project-thumbnail {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-  }
 
-  .project-title {
-    padding: 10px;
-    font-size: 1rem;
-    font-weight: bold;
-  }
-}
+
+
+
+// .projects-grid-container {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   padding: 20px;
+
+//   h1 {
+//     color: #fff;
+//   }
+// }
+
+// .categories {
+//   margin-bottom: 20px;
+
+//   button {
+//     margin: 0 10px;
+//     padding: 10px 20px;
+//     background-color: #007bff;
+//     color: #fff;
+//     border: none;
+//     border-radius: 5px;
+//     cursor: pointer;
+//     transition: background-color 0.3s;
+
+//     &:hover {
+//       background-color: #0056b3;
+//     }
+//   }
+// }
+
+// .projects-grid {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 20px;
+//   justify-content: center;
+//   p {
+//     color: #fff;
+//   }
+// }
+
+// .project-card {
+//   background-color: #f9f9f9;
+//   border-radius: 4px;
+//   overflow: hidden;
+//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//   text-align: center;
+//   width: 200px;
+
+//   .project-thumbnail {
+//     width: 100%;
+//     height: 150px;
+//     object-fit: cover;
+//   }
+
+//   .project-title {
+//     padding: 10px;
+//     font-size: 1rem;
+//     font-weight: bold;
+//   }
+// }
