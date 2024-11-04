@@ -9,6 +9,9 @@ $hover-color: #ffdd57; // Hover color for links
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;       // Full width
+  max-width: 1200px; // Optional: Limit the maximum width if desired
+  margin: 0 auto;
 
   h1 {
     margin: 20px 0;
@@ -43,6 +46,10 @@ $hover-color: #ffdd57; // Hover color for links
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px; // Space between cards
+    width: 100%;
+    justify-content: center; 
+    max-width: 1200px; 
+    margin: 0 auto; 
 
     .project-card {
       position: relative;
