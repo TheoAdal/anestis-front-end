@@ -50,8 +50,8 @@ function TopBarNav() {
             className="md:no-underline nav-link"
           >
             {t("header.contact")}
-          </Navbar.Link>
-          <Navbar.Link
+           </Navbar.Link>  {/* COMMENTED FOR NOW */}
+          {/* <Navbar.Link             
             as={Link}
             to="/18927358297659876345987263"
             className="md:no-underline nav-link"
@@ -64,7 +64,7 @@ function TopBarNav() {
             className="md:no-underline nav-link"
           >
             EDIT PROJECT
-          </Navbar.Link>
+          </Navbar.Link> */}
           <Button
             onClick={toggleLanguage}
             color="gray"
