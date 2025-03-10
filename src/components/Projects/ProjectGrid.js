@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 import { useTranslation } from "react-i18next";
 import "../HomePage/HomePageStyles.scss";
 import "./ProjectStyles.scss";
 
-import f1 from "../../images/f1.jpg";
-import f2 from "../../images/f2.jpg";
-import f3 from "../../images/f3.jpg";
-import f4 from "../../images/f4.jpg";
-import f5 from "../../images/f5.jpg";
+import f1 from "../../images/tinyApartments/TinyApartments1.jpg";
+import f2 from "../../images/tinyApartments/TinyApartments2.jpg";
+import f3 from "../../images/tinyApartments/TinyApartments3.jpg";
+import f4 from "../../images/tinyApartments/TinyApartments4.jpg";
+import f5 from "../../images/tinyApartments/TinyApartments5.jpg";
 
 const ProjectsGrid = () => {
   const { category } = useParams();
@@ -18,13 +18,13 @@ const ProjectsGrid = () => {
   const [projects, setProjects] = useState([]);
   const [filterCategory, setFilterCategory] = useState("Show all");
 
-  const validCategories = [
-    "hotels",
-    "houses",
-    "stores",
-    "offices",
-    "apartments",
-  ]; // Add your valid categories here
+  // const validCategories = [
+  //   "hotels",
+  //   "houses",
+  //   "stores",
+  //   "offices",
+  //   "apartments",
+  // ]; // Add your valid categories here
   const categories = [
     t("projects.filters.all"),
     t("projects.filters.hotels"),
@@ -157,8 +157,11 @@ const ProjectsGrid = () => {
                 project.category === filterCategory
             )
             .map((project, index) => (
-              <div key={index} className="project-card h-[40vh]">
-                <Link to={`/projects/${project.category}/${project.name}`}>
+              <div key={index} className="project-card">
+                <Link
+                  to={`/projects/${project.category}/${project.name}`}
+                  onClick={window.scrollTo(0, 0)}
+                >
                   <div className="image-container h-[50vh]">
                     <img
                       className="image"

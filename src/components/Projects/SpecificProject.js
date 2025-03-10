@@ -1,16 +1,17 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 import { useTranslation } from "react-i18next";
 import ProjectsGrid from "./ProjectGrid";
 import "./SpecificProjectStyles.scss";
 
-import f1 from "../../images/f1.jpg";
-import f2 from "../../images/f2.jpg";
-import f3 from "../../images/f3.jpg";
-import f4 from "../../images/f4.jpg";
-import f5 from "../../images/f5.jpg";
+import f1 from "../../images/tinyApartments/TinyApartments1.jpg";
+// import f2 from "../../images/tinyApartments/TinyApartments2.jpg";
+import f3 from "../../images/tinyApartments/TinyApartments3.jpg";
+// import f4 from "../../images/tinyApartments/TinyApartments4.jpg";
+import f5 from "../../images/tinyApartments/TinyApartments5.jpg";
 
 const SpecificProject = () => {
   const { name } = useParams();
